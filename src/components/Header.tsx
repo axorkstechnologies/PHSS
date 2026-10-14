@@ -42,17 +42,19 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <>
-      {/* Top Welcome & Utility Strip with Dark Blue Top Bar */}
-      <div className="bg-[#0b1329] text-slate-200 border-b border-slate-800 text-xs py-2 px-4 sm:px-8 transition-colors">
+      {/* 1. Top Bar: Dark blue shade (#081226), contact info (0325 6127831), 18 in yellow, clean & professional */}
+      <div className="bg-[#081226] text-slate-200 border-b border-slate-800 text-xs py-2 px-4 sm:px-8 transition-colors">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/10 text-white text-[11px] font-medium border border-white/15">
-              <span>Session 2025–26 Enrolling</span>
+            {/* Admissions 2025-2026: Yellow applied to roughly half */}
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/10 text-[11px] font-semibold border border-white/15">
+              <span className="text-[#f59e0b]">Admissions</span>
+              <span className="text-white">2025–2026</span>
             </span>
             <span aria-hidden="true" className="text-slate-600 hidden sm:inline">·</span>
             <span className="text-slate-300 hidden sm:inline font-medium">Simly Dam Road Campus, Islamabad</span>
             <span aria-hidden="true" className="text-slate-600 hidden sm:inline">·</span>
-            {/* 18 Years: "18" in yellow & slightly larger, rest in white */}
+            {/* The number 18 in yellow and slightly larger, rest in white */}
             <span className="hidden sm:inline-flex items-center gap-1">
               <span className="text-[#f59e0b] font-bold text-sm">18</span>
               <span className="text-white font-medium">Years of Excellence</span>
@@ -60,9 +62,10 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           <div className="flex items-center gap-4 text-xs">
+            {/* Phone Number: 0325 6127831 prominently shown */}
             <a
               href={`tel:${SCHOOL_INFO.phone}`}
-              className="flex items-center gap-1.5 hover:text-white transition-colors font-medium text-slate-200"
+              className="flex items-center gap-1.5 hover:text-white transition-colors font-semibold text-slate-100"
             >
               <Phone className="w-3.5 h-3.5 text-[#f59e0b]" />
               <span>{SCHOOL_INFO.phone}</span>
@@ -81,28 +84,29 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
 
-      {/* Main Top Navigation Header */}
+      {/* 2. Main Top Navigation Header */}
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200 py-3'
+            ? 'bg-white/98 backdrop-blur-md shadow-md border-b border-slate-200 py-3'
             : 'bg-white border-b border-slate-100 py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between gap-6">
-          {/* Brand Wordmark: PEARL HILLIAN in current color + School System Islamabad in lighter vibrant blue */}
+          {/* Logo Section: Strong highlighted "P" logo + Prominent PEARL HILLIAN + Lighter vibrant blue subtitle */}
           <button
             onClick={() => handleNavClick('home')}
             className="flex items-center gap-3.5 text-left focus:outline-none group shrink-0"
           >
-            <div className="w-10 h-10 rounded-xl bg-[#0b1329] text-white flex items-center justify-center font-editorial text-2xl font-bold tracking-wider shadow-sm group-hover:scale-105 transition-all">
-              <span>P</span>
+            {/* Strongly highlighted "P" emblem */}
+            <div className="w-11 h-11 rounded-xl bg-[#081226] text-white flex items-center justify-center font-editorial text-2xl font-bold tracking-wider shadow-md group-hover:scale-105 transition-all border-2 border-[#0284c7] ring-2 ring-blue-50">
+              <span className="text-white drop-shadow-sm">P</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-editorial text-2xl md:text-[25px] font-bold text-[#0b1329] tracking-tight whitespace-nowrap leading-none">
+              <span className="font-editorial text-2xl md:text-[28px] font-bold text-[#081226] tracking-tight whitespace-nowrap leading-none">
                 PEARL HILLIAN
               </span>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#0284c7] mt-1">
+              <span className="text-[12px] font-bold uppercase tracking-wider text-[#0284c7] mt-1">
                 School System Islamabad
               </span>
             </div>
@@ -118,8 +122,8 @@ export const Header: React.FC<HeaderProps> = ({
                   onClick={() => handleNavClick(link.id)}
                   className={`px-4 py-2 text-sm font-semibold rounded-full transition-all whitespace-nowrap ${
                     isActive
-                      ? 'bg-[#0b1329] text-white shadow-sm'
-                      : 'text-slate-600 hover:text-[#0b1329] hover:bg-white'
+                      ? 'bg-[#081226] text-white shadow-sm'
+                      : 'text-slate-600 hover:text-[#081226] hover:bg-white'
                   }`}
                 >
                   {link.label}
@@ -132,16 +136,16 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={onOpenApplyModal}
-              className="px-5 py-2.5 text-xs sm:text-sm font-bold text-[#0b1329] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap flex items-center gap-1.5"
+              className="px-6 py-2.5 text-xs sm:text-sm font-bold text-[#081226] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap flex items-center gap-1.5"
             >
               <span>Apply for Admission</span>
-              <ArrowUpRight className="w-4 h-4 text-[#0b1329]" />
+              <ArrowUpRight className="w-4 h-4 text-[#081226]" />
             </button>
 
             {/* Mobile Hamburger toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-slate-700 hover:text-[#0b1329] hover:bg-slate-100 rounded-lg focus:outline-none transition-colors"
+              className="lg:hidden p-2 text-slate-700 hover:text-[#081226] hover:bg-slate-100 rounded-lg focus:outline-none transition-colors"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -159,7 +163,7 @@ export const Header: React.FC<HeaderProps> = ({
                   onClick={() => handleNavClick(link.id)}
                   className={`text-left text-sm py-2.5 px-4 rounded-xl font-semibold transition-all ${
                     activeTab === link.id
-                      ? 'bg-[#0b1329] text-white shadow-sm'
+                      ? 'bg-[#081226] text-white shadow-sm'
                       : 'text-slate-700 hover:bg-slate-50'
                   }`}
                 >
@@ -173,10 +177,10 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                     onOpenApplyModal();
                   }}
-                  className="w-full py-3 text-center text-xs font-bold text-[#0b1329] bg-[#f59e0b] hover:bg-[#d97706] rounded-xl shadow-md flex items-center justify-center gap-2"
+                  className="w-full py-3 text-center text-xs font-bold text-[#081226] bg-[#f59e0b] hover:bg-[#d97706] rounded-xl shadow-md flex items-center justify-center gap-2"
                 >
-                  <GraduationCap className="w-4 h-4 text-[#0b1329]" />
-                  <span>Start Admission Application</span>
+                  <GraduationCap className="w-4 h-4 text-[#081226]" />
+                  <span>Apply for Admission</span>
                 </button>
                 <a
                   href={`https://wa.me/${SCHOOL_INFO.whatsappRaw}?text=${encodeURIComponent('Hello Pearl Hillian Admissions Desk, I would like to inquire about admissions.')}`}
