@@ -6,12 +6,11 @@ import {
   Phone,
   Mail,
   MessageCircle,
-  Clock,
-  Calendar,
   Send,
   CheckCircle2,
   ChevronDown,
-  Navigation
+  Navigation,
+  Sparkles
 } from 'lucide-react';
 
 interface ContactViewProps {
@@ -45,21 +44,20 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
   };
 
   return (
-    <div className="space-y-20 pb-20">
+    <div className="space-y-24 md:space-y-32 pb-24">
       {/* Editorial Header */}
-      <section className="bg-[#081226] text-white py-16 lg:py-24 px-4 sm:px-8 border-b border-slate-800">
-        <div className="max-w-4xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-gold-400 uppercase">
-            <span>Direct Admissions &amp; Campus Directorate</span>
-            <span aria-hidden="true">·</span>
-            <span>Islamabad</span>
+      <section className="bg-gradient-to-br from-[#152540] via-[#1b3054] to-[#213c68] text-white py-20 lg:py-28 px-4 sm:px-8 border-b border-white/10 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 text-[#f2dc9e] text-xs font-bold uppercase tracking-wider border border-white/20">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Direct Admissions &amp; Campus Directorate · Islamabad</span>
           </div>
 
-          <h1 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+          <h1 className="font-editorial text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
             Connect With Simly Dam Road Campus
           </h1>
 
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-light">
+          <p className="text-slate-200 text-base sm:text-xl leading-relaxed max-w-2xl mx-auto font-normal">
             Our admissions counselors and campus administrators are delighted to assist with grade placements, admissions requirements, and private tour reservations.
           </p>
         </div>
@@ -69,33 +67,33 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Card 1: Phone */}
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div className="bg-white p-8 rounded-3xl border border-[#ebe3d5] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
             <div>
-              <div className="w-10 h-10 rounded-lg bg-slate-100 text-[#081226] flex items-center justify-center mb-4">
-                <Phone className="w-5 h-5 text-gold-600" />
+              <div className="w-12 h-12 rounded-2xl bg-amber-50 text-[#bf923a] flex items-center justify-center mb-5 border border-amber-200">
+                <Phone className="w-6 h-6" />
               </div>
-              <h3 className="font-editorial text-lg font-bold text-[#081226]">Official Telephone</h3>
-              <p className="text-slate-500 text-xs mt-1">Direct admission desk and reception</p>
-              <div className="mt-3 font-semibold text-sm text-slate-900">
-                <a href={`tel:${SCHOOL_INFO.phone}`} className="hover:text-gold-600 transition-colors">
+              <h3 className="font-editorial text-2xl font-bold text-[#152540]">Official Telephone</h3>
+              <p className="text-slate-500 text-xs sm:text-sm mt-1">Direct admission desk and reception</p>
+              <div className="mt-4 font-bold text-base text-[#152540]">
+                <a href={`tel:${SCHOOL_INFO.phone}`} className="hover:text-[#bf923a] transition-colors">
                   {SCHOOL_INFO.phone}
                 </a>
               </div>
             </div>
-            <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400">
+            <div className="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-400 font-medium">
               Monday – Saturday 8:00 AM – 3:00 PM
             </div>
           </div>
 
           {/* Card 2: WhatsApp */}
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div className="bg-white p-8 rounded-3xl border border-[#ebe3d5] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
             <div>
-              <div className="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
-                <MessageCircle className="w-5 h-5" />
+              <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5 border border-emerald-200">
+                <MessageCircle className="w-6 h-6" />
               </div>
-              <h3 className="font-editorial text-lg font-bold text-[#081226]">Admissions WhatsApp</h3>
-              <p className="text-slate-500 text-xs mt-1">Instant messaging &amp; prospectus delivery</p>
-              <div className="mt-3 font-semibold text-sm text-emerald-700">
+              <h3 className="font-editorial text-2xl font-bold text-[#152540]">Admissions WhatsApp</h3>
+              <p className="text-slate-500 text-xs sm:text-sm mt-1">Instant messaging &amp; prospectus delivery</p>
+              <div className="mt-4 font-bold text-base text-emerald-700">
                 <a
                   href={`https://wa.me/${SCHOOL_INFO.whatsappRaw}`}
                   target="_blank"
@@ -106,44 +104,44 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
                 </a>
               </div>
             </div>
-            <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] text-emerald-600 font-medium">
+            <div className="mt-6 pt-4 border-t border-slate-100 text-xs text-emerald-700 font-semibold">
               Verified Official Channel
             </div>
           </div>
 
           {/* Card 3: Email */}
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div className="bg-white p-8 rounded-3xl border border-[#ebe3d5] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
             <div>
-              <div className="w-10 h-10 rounded-lg bg-slate-100 text-[#081226] flex items-center justify-center mb-4">
-                <Mail className="w-5 h-5 text-gold-600" />
+              <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#1b3773] flex items-center justify-center mb-5 border border-blue-200">
+                <Mail className="w-6 h-6" />
               </div>
-              <h3 className="font-editorial text-lg font-bold text-[#081226]">Official Email</h3>
-              <p className="text-slate-500 text-xs mt-1">Formal inquiries &amp; administrative communication</p>
-              <div className="mt-3 font-semibold text-xs text-slate-900 break-all">
-                <a href={`mailto:${SCHOOL_INFO.email}`} className="hover:text-gold-600 transition-colors">
+              <h3 className="font-editorial text-2xl font-bold text-[#152540]">Official Email</h3>
+              <p className="text-slate-500 text-xs sm:text-sm mt-1">Formal inquiries &amp; admissions</p>
+              <div className="mt-4 font-bold text-xs sm:text-sm text-[#152540] break-all">
+                <a href={`mailto:${SCHOOL_INFO.email}`} className="hover:text-[#bf923a] transition-colors">
                   {SCHOOL_INFO.email}
                 </a>
               </div>
             </div>
-            <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400">
+            <div className="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-400 font-medium">
               24-hour response turnaround
             </div>
           </div>
 
           {/* Card 4: Location */}
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div className="bg-white p-8 rounded-3xl border border-[#ebe3d5] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
             <div>
-              <div className="w-10 h-10 rounded-lg bg-slate-100 text-[#081226] flex items-center justify-center mb-4">
-                <MapPin className="w-5 h-5 text-gold-600" />
+              <div className="w-12 h-12 rounded-2xl bg-amber-50 text-[#bf923a] flex items-center justify-center mb-5 border border-amber-200">
+                <MapPin className="w-6 h-6" />
               </div>
-              <h3 className="font-editorial text-lg font-bold text-[#081226]">Campus Location</h3>
-              <p className="text-slate-500 text-xs mt-1">Simly Dam Road Campus</p>
-              <div className="mt-3 text-xs text-slate-700 leading-relaxed font-medium">
+              <h3 className="font-editorial text-2xl font-bold text-[#152540]">Campus Location</h3>
+              <p className="text-slate-500 text-xs sm:text-sm mt-1">Simly Dam Road Campus</p>
+              <div className="mt-4 text-xs sm:text-sm text-slate-700 leading-relaxed font-semibold">
                 Islamabad Capital Territory, Pakistan
               </div>
             </div>
-            <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400">
-              Easily accessible from Bhara Kahu &amp; Park View
+            <div className="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-400 font-medium">
+              Accessible from Bhara Kahu &amp; Park View
             </div>
           </div>
         </div>
@@ -153,78 +151,78 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* Inquiry Form */}
-          <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-2xl border border-slate-200 shadow-sm">
-            <div className="mb-6">
-              <h2 className="font-editorial text-2xl sm:text-3xl font-bold text-[#081226]">
+          <div className="lg:col-span-7 bg-white p-8 sm:p-12 rounded-3xl border border-[#ebe3d5] shadow-sm">
+            <div className="mb-8">
+              <h2 className="font-editorial text-3xl sm:text-4xl font-bold text-[#152540]">
                 Send an Admissions Inquiry
               </h2>
-              <p className="text-slate-500 text-xs sm:text-sm mt-1">
+              <p className="text-slate-600 text-sm sm:text-base mt-2">
                 Fill out the form below or dispatch your inquiry instantly via WhatsApp.
               </p>
             </div>
 
             {inquirySent ? (
-              <div className="p-8 text-center bg-slate-50 rounded-xl border border-slate-200">
-                <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3">
-                  <CheckCircle2 className="w-6 h-6" />
+              <div className="p-8 text-center bg-[#faf8f4] rounded-2xl border border-[#ebe3d5]">
+                <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="font-editorial text-xl font-bold text-[#081226]">Message Received</h3>
-                <p className="text-slate-600 text-xs mt-1 max-w-sm mx-auto">
+                <h3 className="font-editorial text-2xl font-bold text-[#152540]">Message Received</h3>
+                <p className="text-slate-600 text-sm mt-2 max-w-sm mx-auto">
                   Thank you for reaching out to Pearl Hillian School System. An admissions officer will contact you shortly.
                 </p>
                 <button
                   onClick={() => setInquirySent(false)}
-                  className="mt-4 px-4 py-2 text-xs font-semibold text-slate-700 bg-slate-200 hover:bg-slate-300 rounded"
+                  className="mt-6 px-6 py-2.5 text-xs font-bold text-slate-700 bg-slate-200 hover:bg-slate-300 rounded-full transition-colors"
                 >
                   Send Another Inquiry
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleInquirySubmit} className="space-y-4">
+              <form onSubmit={handleInquirySubmit} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">Your Full Name *</label>
+                    <label className="block text-xs font-bold text-slate-700 mb-1.5">Your Full Name *</label>
                     <input
                       type="text"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Dr. Salman Khan"
-                      className="w-full text-xs px-3 py-2 border border-slate-300 rounded focus:border-[#081226] focus:ring-1 focus:ring-[#081226] outline-none"
+                      className="w-full text-sm px-4 py-3 border border-slate-300 rounded-xl focus:border-[#152540] focus:ring-2 focus:ring-[#152540]/20 outline-none transition-all"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">Phone Number *</label>
+                    <label className="block text-xs font-bold text-slate-700 mb-1.5">Phone Number *</label>
                     <input
                       type="tel"
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="0300 1234567"
-                      className="w-full text-xs px-3 py-2 border border-slate-300 rounded focus:border-[#081226] focus:ring-1 focus:ring-[#081226] outline-none"
+                      className="w-full text-sm px-4 py-3 border border-slate-300 rounded-xl focus:border-[#152540] focus:ring-2 focus:ring-[#152540]/20 outline-none transition-all"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">Email Address</label>
+                    <label className="block text-xs font-bold text-slate-700 mb-1.5">Email Address</label>
                     <input
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="salman@example.com"
-                      className="w-full text-xs px-3 py-2 border border-slate-300 rounded focus:border-[#081226] focus:ring-1 focus:ring-[#081226] outline-none"
+                      className="w-full text-sm px-4 py-3 border border-slate-300 rounded-xl focus:border-[#152540] focus:ring-2 focus:ring-[#152540]/20 outline-none transition-all"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">Subject of Inquiry</label>
+                    <label className="block text-xs font-bold text-slate-700 mb-1.5">Subject of Inquiry</label>
                     <select
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full text-xs px-3 py-2 border border-slate-300 rounded focus:border-[#081226] focus:ring-1 focus:ring-[#081226] outline-none bg-white"
+                      className="w-full text-sm px-4 py-3 border border-slate-300 rounded-xl focus:border-[#152540] focus:ring-2 focus:ring-[#152540]/20 outline-none bg-white transition-all"
                     >
                       <option value="Admissions Inquiry">Admissions Inquiry (Session 2025–26)</option>
                       <option value="Montessori Placement">Montessori Wing Placement</option>
@@ -236,22 +234,22 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">Your Message or Child Details *</label>
+                  <label className="block text-xs font-bold text-slate-700 mb-1.5">Your Message or Child Details *</label>
                   <textarea
                     rows={4}
                     required
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Please include your child's age, intended grade, and any specific questions you may have..."
-                    className="w-full text-xs px-3 py-2 border border-slate-300 rounded focus:border-[#081226] focus:ring-1 focus:ring-[#081226] outline-none resize-none"
+                    className="w-full text-sm px-4 py-3 border border-slate-300 rounded-xl focus:border-[#152540] focus:ring-2 focus:ring-[#152540]/20 outline-none resize-none transition-all"
                   />
                 </div>
 
-                <div className="pt-2 flex flex-wrap items-center justify-between gap-3">
+                <div className="pt-3 flex flex-wrap items-center justify-between gap-4">
                   <button
                     type="button"
                     onClick={handleWhatsAppDirect}
-                    className="px-4 py-2.5 text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded flex items-center gap-1.5 transition-colors"
+                    className="px-5 py-3 text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-full flex items-center gap-2 transition-colors"
                   >
                     <MessageCircle className="w-4 h-4 text-emerald-600" />
                     <span>Send Message via WhatsApp</span>
@@ -259,9 +257,9 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
 
                   <button
                     type="submit"
-                    className="px-6 py-2.5 text-xs font-semibold text-white bg-[#081226] hover:bg-[#132752] rounded transition-colors flex items-center gap-1.5 shadow-sm"
+                    className="px-7 py-3 text-xs sm:text-sm font-bold text-white bg-[#152540] hover:bg-[#213c68] rounded-full transition-all flex items-center gap-2 shadow-md hover:shadow-lg"
                   >
-                    <Send className="w-3.5 h-3.5" />
+                    <Send className="w-4 h-4 text-[#eacd72]" />
                     <span>Submit Inquiry</span>
                   </button>
                 </div>
@@ -271,34 +269,34 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
 
           {/* Directions & Campus Access Guide */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-[#081226] text-white p-8 rounded-2xl shadow-xl border border-slate-700 space-y-4">
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gold-400">
-                <Navigation className="w-4 h-4" />
+            <div className="bg-gradient-to-br from-[#152540] to-[#213c68] text-white p-8 sm:p-10 rounded-3xl shadow-xl border border-white/10 space-y-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-[#f2dc9e] text-xs font-bold uppercase tracking-wider border border-white/20">
+                <Navigation className="w-3.5 h-3.5" />
                 <span>Navigating to Campus</span>
               </div>
-              <h3 className="font-editorial text-2xl font-bold text-white">
+              <h3 className="font-editorial text-2xl sm:text-3xl font-bold text-white">
                 Simly Dam Road Campus Location
               </h3>
-              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
                 Strategically positioned along Simly Dam Road, Islamabad. Our campus offers a pristine natural mountain sanctuary away from congested thoroughfares while remaining easily reachable.
               </p>
 
-              <div className="pt-2 space-y-2.5 text-xs text-slate-300">
-                <div className="p-3 bg-white/5 rounded-lg border border-white/10">
-                  <span className="font-bold text-white">From Bhara Kahu:</span> Approximately 8–10 minutes drive along Simly Dam Road.
+              <div className="pt-2 space-y-3 text-xs sm:text-sm text-slate-200 font-medium">
+                <div className="p-4 bg-white/10 rounded-2xl border border-white/15">
+                  <strong className="text-white">From Bhara Kahu:</strong> Approximately 8–10 minutes scenic drive along Simly Dam Road.
                 </div>
-                <div className="p-3 bg-white/5 rounded-lg border border-white/10">
-                  <span className="font-bold text-white">From Chak Shahzad / Park View:</span> Direct connectivity with school shuttle transport options.
+                <div className="p-4 bg-white/10 rounded-2xl border border-white/15">
+                  <strong className="text-white">From Chak Shahzad / Park View:</strong> Direct connectivity with safe school shuttle vans.
                 </div>
-                <div className="p-3 bg-white/5 rounded-lg border border-white/10">
-                  <span className="font-bold text-white">Admissions Desk Hours:</span> Mon – Sat: 8:00 AM – 3:00 PM.
+                <div className="p-4 bg-white/10 rounded-2xl border border-white/15">
+                  <strong className="text-white">Admissions Desk Hours:</strong> Mon – Sat: 8:00 AM – 3:00 PM.
                 </div>
               </div>
 
               <div className="pt-2">
                 <button
                   onClick={onOpenApplyModal}
-                  className="w-full py-2.5 text-xs font-semibold text-[#081226] bg-white hover:bg-slate-100 rounded text-center transition-colors"
+                  className="w-full py-3.5 text-xs sm:text-sm font-bold text-[#152540] bg-white hover:bg-[#faf8f4] rounded-full text-center transition-all shadow-md"
                 >
                   Schedule an Accompanied Campus Walk-Through
                 </button>
@@ -310,38 +308,38 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
 
       {/* Comprehensive Parent FAQs */}
       <section className="max-w-4xl mx-auto px-4 sm:px-8">
-        <div className="text-center mb-10">
-          <div className="text-xs font-semibold tracking-widest uppercase text-slate-500">
-            Common Inquiries
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[#bf923a] text-xs font-bold uppercase tracking-wider border border-[#ebe3d5] mb-3">
+            <span>Common Inquiries</span>
           </div>
-          <h2 className="font-editorial text-3xl font-bold text-[#081226] mt-1">
+          <h2 className="font-editorial text-3xl sm:text-5xl font-bold text-[#152540]">
             Frequently Asked Questions
           </h2>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-4">
           {FAQS.map((faq, idx) => {
             const isOpen = openFaqIndex === idx;
             return (
               <div
                 key={idx}
-                className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm"
+                className="bg-white rounded-2xl border border-[#ebe3d5] overflow-hidden shadow-xs"
               >
                 <button
                   onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
-                  className="w-full p-5 text-left flex items-center justify-between gap-4 hover:bg-slate-50/50 transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-slate-50 transition-colors"
                 >
-                  <span className="font-semibold text-xs sm:text-sm text-slate-900">
+                  <span className="font-bold text-sm sm:text-base text-[#152540]">
                     {faq.q}
                   </span>
                   <ChevronDown
-                    className={`w-4 h-4 text-slate-500 transition-transform ${
-                      isOpen ? 'transform rotate-180' : ''
+                    className={`w-5 h-5 text-slate-400 transition-transform ${
+                      isOpen ? 'transform rotate-180 text-[#bf923a]' : ''
                     }`}
                   />
                 </button>
                 {isOpen && (
-                  <div className="px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                  <div className="px-6 pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
                     {faq.a}
                   </div>
                 )}

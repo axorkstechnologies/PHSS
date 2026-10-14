@@ -8,40 +8,40 @@ interface FloatingActionsProps {
 
 export const FloatingActions: React.FC<FloatingActionsProps> = ({ onOpenApplyModal }) => {
   return (
-    <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-2.5">
+    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
       {/* Book Tour Pill */}
       <button
         onClick={onOpenApplyModal}
-        className="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#081226] text-white text-xs font-semibold shadow-xl hover:bg-[#132752] transition-transform hover:-translate-y-0.5 border border-slate-700/50"
+        className="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#152540] text-white text-xs font-bold shadow-xl hover:bg-[#213c68] transition-all hover:-translate-y-0.5 border border-[#d9af4c]/30"
       >
-        <Calendar className="w-3.5 h-3.5 text-gold-400" />
+        <Calendar className="w-3.5 h-3.5 text-[#eacd72]" />
         <span>Book Campus Tour</span>
       </button>
 
       {/* Direct Phone Call Button */}
       <a
         href={`tel:${SCHOOL_INFO.phone}`}
-        className="flex sm:hidden items-center justify-center w-12 h-12 rounded-full bg-[#081226] text-white shadow-xl hover:bg-[#132752] transition-transform active:scale-95 border border-slate-700/60"
+        className="flex sm:hidden items-center justify-center w-12 h-12 rounded-full bg-[#152540] text-white shadow-xl hover:bg-[#213c68] transition-transform active:scale-95 border border-[#d9af4c]/30"
         title="Call Admissions Office"
         aria-label="Call Admissions Office"
       >
-        <Phone className="w-5 h-5 text-gold-400" />
+        <Phone className="w-5 h-5 text-[#eacd72]" />
       </a>
 
-      {/* Official WhatsApp Floating Action with Liquid Glass Rim */}
+      {/* Official WhatsApp Floating Action */}
       <a
         href={`https://wa.me/${SCHOOL_INFO.whatsappRaw}?text=${encodeURIComponent('Hello Pearl Hillian Admissions Desk (Simly Dam Road Campus), I am inquiring about admission requirements.')}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative group flex items-center justify-center w-13 h-13 rounded-full bg-[#25D366] text-white shadow-2xl hover:bg-[#20ba59] transition-all hover:scale-105 active:scale-95"
+        className="relative group flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-2xl hover:bg-[#20ba59] transition-all hover:scale-105 active:scale-95 ring-4 ring-white/60"
         title="Chat with Pearl Hillian Admissions on WhatsApp"
         aria-label="Chat on WhatsApp"
       >
         <MessageCircle className="w-7 h-7" />
         <span className="sr-only">WhatsApp Pearl Hillian</span>
-        {/* Subtle tooltip on hover desktop */}
-        <span className="hidden md:group-hover:block absolute right-full mr-3 px-3 py-1.5 text-[11px] font-medium text-white bg-[#081226] rounded-md whitespace-nowrap shadow-lg border border-slate-700">
-          WhatsApp Admissions: {SCHOOL_INFO.whatsapp}
+        {/* Tooltip on hover desktop */}
+        <span className="hidden md:group-hover:block absolute right-full mr-3 px-3 py-1.5 text-xs font-semibold text-white bg-[#152540] rounded-xl whitespace-nowrap shadow-xl border border-white/10">
+          Chat with Admissions: {SCHOOL_INFO.whatsapp}
         </span>
       </a>
     </div>

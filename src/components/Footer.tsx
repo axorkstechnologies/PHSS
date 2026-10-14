@@ -1,7 +1,7 @@
 import React from 'react';
 import { SCHOOL_INFO } from '../data/schoolData';
 import { PageTab } from '../types';
-import { Phone, Mail, MapPin, MessageCircle, ArrowRight, ShieldCheck, Award } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, ArrowRight, ShieldCheck, Award, Heart } from 'lucide-react';
 
 interface FooterProps {
   setActiveTab: (tab: PageTab) => void;
@@ -17,27 +17,27 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
   };
 
   return (
-    <footer className="bg-[#040915] text-slate-300 border-t border-slate-800/80">
-      {/* Upper CTA Banner */}
-      <div className="border-b border-slate-800/60 py-12 px-4 sm:px-8 bg-gradient-to-r from-[#081226] via-[#0d1d3d] to-[#081226]">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="bg-[#152540] text-slate-300 border-t border-[#213c68]/60">
+      {/* Upper CTA Banner with Warm School Invitation */}
+      <div className="border-b border-[#213c68]/50 py-14 px-4 sm:px-8 bg-gradient-to-r from-[#152540] via-[#1b3054] to-[#152540]">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-widest text-gold-400 uppercase">
-              <Award className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#f2dc9e] uppercase mb-2">
+              <Award className="w-4 h-4 text-[#eacd72]" />
               <span>Admissions Open · Academic Session {SCHOOL_INFO.academicSession}</span>
             </div>
-            <h3 className="font-editorial text-2xl sm:text-3xl font-bold text-white mt-1">
+            <h3 className="font-editorial text-2xl sm:text-4xl font-bold text-white leading-tight">
               Secure Your Child’s Seat at Pearl Hillian School System
             </h3>
-            <p className="text-slate-400 text-sm mt-1 max-w-xl">
-              Individualized attention, authentic Montessori foundations, and distinguished FBISE Board performance on Simly Dam Road, Islamabad.
+            <p className="text-slate-300 text-sm sm:text-base mt-2 max-w-xl leading-relaxed">
+              Personalized mentorship, authentic Montessori foundations, and distinguished FBISE Board performance on Simly Dam Road, Islamabad.
             </p>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex flex-wrap items-center gap-3.5 shrink-0">
             <button
               onClick={onOpenApplyModal}
-              className="px-5 py-2.5 text-xs font-semibold text-[#081226] bg-white rounded hover:bg-slate-100 transition-colors shadow-lg"
+              className="px-6 py-3.5 text-xs sm:text-sm font-bold text-[#152540] bg-white hover:bg-[#faf8f4] rounded-full transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
             >
               Apply for Admission
             </button>
@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
               href={`https://wa.me/${SCHOOL_INFO.whatsappRaw}?text=${encodeURIComponent('Hello Pearl Hillian Admissions Team, I would like to book a campus tour.')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 text-xs font-semibold text-white bg-emerald-600 rounded hover:bg-emerald-500 transition-colors flex items-center gap-2 shadow-lg"
+              className="px-6 py-3.5 text-xs sm:text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-full transition-all flex items-center gap-2 shadow-lg hover:scale-105 active:scale-95"
             >
               <MessageCircle className="w-4 h-4" />
               <span>WhatsApp Inquiries</span>
@@ -58,33 +58,38 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Col 1: Identity */}
         <div>
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-9 h-9 rounded bg-white text-[#081226] flex items-center justify-center font-editorial text-xl font-bold">
+          <div className="flex items-center gap-3.5 mb-4">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#213c68] to-[#152540] text-white flex items-center justify-center font-editorial text-2xl font-bold border border-[#d9af4c]/40 shadow-sm">
               P
             </div>
-            <span className="font-editorial text-xl font-bold text-white tracking-wide">
-              Pearl Hillian
-            </span>
+            <div>
+              <span className="font-editorial text-2xl font-bold text-white tracking-wide block leading-none">
+                Pearl Hillian
+              </span>
+              <span className="text-[10px] uppercase font-bold tracking-wider text-[#eacd72]">
+                School System · Est. 2008
+              </span>
+            </div>
           </div>
-          <p className="text-slate-400 text-xs leading-relaxed mb-5">
-            Eighteen years of uninterrupted educational distinction in Islamabad. Cultivating intellectual rigor, moral integrity, and modern STEM capabilities within an inspiring mountain-side campus.
+          <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-5 font-normal">
+            Eighteen years of uninterrupted educational distinction in Islamabad. Cultivating intellectual rigor, moral integrity, and modern STEM capabilities within an inspiring mountain sanctuary.
           </p>
-          <div className="flex items-center gap-2 text-xs text-slate-400">
-            <ShieldCheck className="w-4 h-4 text-gold-400" />
+          <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
+            <ShieldCheck className="w-4 h-4 text-[#eacd72]" />
             <span>FBISE Registered · Certified Montessori Wing</span>
           </div>
         </div>
 
         {/* Col 2: Academic Divisions */}
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-200 mb-4">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-[#f2dc9e] mb-4">
             Academic Programs
           </h4>
-          <ul className="space-y-2 text-xs text-slate-400">
+          <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
             <li>
               <button
                 onClick={() => handleNavigate('academics')}
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors text-left"
               >
                 Montessori Early Years (Playgroup – Prep)
               </button>
@@ -92,7 +97,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
             <li>
               <button
                 onClick={() => handleNavigate('academics')}
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors text-left"
               >
                 Primary School (Grades 1 to 5)
               </button>
@@ -100,7 +105,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
             <li>
               <button
                 onClick={() => handleNavigate('academics')}
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors text-left"
               >
                 Middle School (Grades 6 to 8)
               </button>
@@ -108,7 +113,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
             <li>
               <button
                 onClick={() => handleNavigate('academics')}
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors text-left"
               >
                 Secondary School (Matric / SSC Stream)
               </button>
@@ -116,9 +121,9 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
             <li>
               <button
                 onClick={() => handleNavigate('academics')}
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors text-left"
               >
-                STEM & Robotics Experiential Labs
+                STEM &amp; Robotics Experiential Labs
               </button>
             </li>
           </ul>
@@ -126,49 +131,49 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
 
         {/* Col 3: Quick Navigation */}
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-200 mb-4">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-[#f2dc9e] mb-4">
             Institutional
           </h4>
-          <ul className="space-y-2 text-xs text-slate-400">
+          <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
             <li>
               <button
                 onClick={() => handleNavigate('about')}
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors text-left"
               >
-                18 Years Heritage & Vision
+                18 Years Heritage &amp; Vision
               </button>
             </li>
             <li>
               <button
                 onClick={() => handleNavigate('admissions')}
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors text-left"
               >
-                Admissions Roadmap & Criteria
+                Admissions Roadmap &amp; Criteria
               </button>
             </li>
             <li>
               <button
                 onClick={() => handleNavigate('campus-life')}
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors text-left"
               >
-                Campus Life & Facility Showcase
+                Campus Life &amp; Facility Showcase
               </button>
             </li>
             <li>
               <button
                 onClick={() => handleNavigate('contact')}
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors text-left"
               >
-                Simly Dam Road Location & Map
+                Simly Dam Road Location &amp; Map
               </button>
             </li>
             <li>
               <button
                 onClick={onOpenApplyModal}
-                className="text-gold-400 hover:text-gold-300 transition-colors flex items-center gap-1 font-medium"
+                className="text-[#eacd72] hover:text-white transition-colors flex items-center gap-1.5 font-bold"
               >
                 <span>Online Admission Portal</span>
-                <ArrowRight className="w-3 h-3" />
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </li>
           </ul>
@@ -176,17 +181,17 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
 
         {/* Col 4: Campus Contact Information */}
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-200 mb-4">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-[#f2dc9e] mb-4">
             Simly Dam Road Campus
           </h4>
-          <ul className="space-y-3 text-xs text-slate-400">
+          <ul className="space-y-3.5 text-xs sm:text-sm text-slate-300">
             <li className="flex items-start gap-2.5">
-              <MapPin className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />
+              <MapPin className="w-4 h-4 text-[#eacd72] shrink-0 mt-0.5" />
               <span>Simly Dam Road Campus, Islamabad Capital Territory, Pakistan</span>
             </li>
             <li className="flex items-center gap-2.5">
-              <Phone className="w-4 h-4 text-gold-400 shrink-0" />
-              <a href={`tel:${SCHOOL_INFO.phone}`} className="hover:text-white transition-colors">
+              <Phone className="w-4 h-4 text-[#eacd72] shrink-0" />
+              <a href={`tel:${SCHOOL_INFO.phone}`} className="hover:text-white transition-colors font-medium">
                 {SCHOOL_INFO.phone}
               </a>
             </li>
@@ -196,13 +201,13 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
                 href={`https://wa.me/${SCHOOL_INFO.whatsappRaw}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition-colors text-emerald-400"
+                className="hover:text-white transition-colors text-emerald-400 font-medium"
               >
                 WhatsApp: {SCHOOL_INFO.whatsapp}
               </a>
             </li>
             <li className="flex items-center gap-2.5">
-              <Mail className="w-4 h-4 text-gold-400 shrink-0" />
+              <Mail className="w-4 h-4 text-[#eacd72] shrink-0" />
               <a
                 href={`mailto:${SCHOOL_INFO.email}`}
                 className="hover:text-white transition-colors truncate"
@@ -215,10 +220,10 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
       </div>
 
       {/* Bottom Legal Bar */}
-      <div className="border-t border-slate-900/80 py-6 px-4 sm:px-8 text-center text-xs text-slate-500">
+      <div className="border-t border-[#213c68]/50 py-6 px-4 sm:px-8 text-center text-xs text-slate-400">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <p>© {currentYear} Pearl Hillian School System. All rights reserved.</p>
-          <div className="flex items-center gap-4 text-slate-500">
+          <div className="flex items-center gap-4 text-slate-400">
             <span>Islamabad Capital Territory</span>
             <span aria-hidden="true">·</span>
             <span>Simly Dam Road Campus</span>

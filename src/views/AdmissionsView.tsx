@@ -8,7 +8,7 @@ import {
   Calculator,
   MessageCircle,
   Phone,
-  Clock,
+  Sparkles,
   ArrowRight
 } from 'lucide-react';
 
@@ -24,36 +24,35 @@ export const AdmissionsView: React.FC<AdmissionsViewProps> = ({
   onOpenFeeModal,
 }) => {
   return (
-    <div className="space-y-20 pb-20">
+    <div className="space-y-24 md:space-y-32 pb-24">
       {/* Editorial Header */}
-      <section className="bg-[#081226] text-white py-16 lg:py-24 px-4 sm:px-8 border-b border-slate-800">
-        <div className="max-w-4xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-gold-400 uppercase">
-            <span>Admissions Procedure</span>
-            <span aria-hidden="true">·</span>
-            <span>Academic Session {SCHOOL_INFO.academicSession}</span>
+      <section className="bg-gradient-to-br from-[#152540] via-[#1b3054] to-[#213c68] text-white py-20 lg:py-28 px-4 sm:px-8 border-b border-white/10 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 text-[#f2dc9e] text-xs font-bold uppercase tracking-wider border border-white/20">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Admissions Procedure · Academic Session {SCHOOL_INFO.academicSession}</span>
           </div>
 
-          <h1 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+          <h1 className="font-editorial text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
             Begin Your Scholar’s Journey at Pearl Hillian
           </h1>
 
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-light">
-            We welcome families who value academic excellence, character integrity, and personalized mentorship. Explore our clear four-stage admissions roadmap below.
+          <p className="text-slate-200 text-base sm:text-xl leading-relaxed max-w-2xl mx-auto font-normal">
+            We welcome families who value academic excellence, character integrity, and personal mentorship. Explore our clear four-stage admissions roadmap below.
           </p>
 
-          <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
+          <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={onOpenApplyModal}
-              className="px-6 py-3 text-xs font-semibold text-[#081226] bg-white hover:bg-slate-100 rounded-md transition-colors shadow-lg"
+              className="px-7 py-4 text-sm sm:text-base font-bold text-[#152540] bg-white hover:bg-[#faf8f4] rounded-full transition-all shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95"
             >
               Start Online Application
             </button>
             <button
               onClick={onOpenFeeModal}
-              className="px-5 py-3 text-xs font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/20 rounded-md transition-colors flex items-center gap-2"
+              className="px-6 py-4 text-sm sm:text-base font-semibold text-white bg-white/15 hover:bg-white/25 border border-white/25 rounded-full transition-all flex items-center gap-2 hover:scale-105 active:scale-95"
             >
-              <Calculator className="w-4 h-4 text-gold-400" />
+              <Calculator className="w-4 h-4 text-[#eacd72]" />
               <span>Calculate Estimated Tuition</span>
             </button>
           </div>
@@ -62,11 +61,11 @@ export const AdmissionsView: React.FC<AdmissionsViewProps> = ({
 
       {/* 4-Step Admissions Roadmap */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="text-center max-w-xl mx-auto mb-14">
-          <div className="text-xs font-semibold tracking-widest uppercase text-slate-500">
-            Transparent &amp; Merit-Based
+        <div className="text-center max-w-xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[#bf923a] text-xs font-bold uppercase tracking-wider border border-[#ebe3d5] mb-3">
+            <span>Transparent &amp; Merit-Based</span>
           </div>
-          <h2 className="font-editorial text-3xl font-bold text-[#081226] mt-1">
+          <h2 className="font-editorial text-3xl sm:text-5xl font-bold text-[#152540]">
             The Four-Stage Admission Roadmap
           </h2>
         </div>
@@ -75,21 +74,21 @@ export const AdmissionsView: React.FC<AdmissionsViewProps> = ({
           {ADMISSION_STEPS.map((st) => (
             <div
               key={st.step}
-              className="bg-white p-6 rounded-xl border border-slate-200/90 shadow-sm relative flex flex-col justify-between"
+              className="bg-white p-8 rounded-3xl border border-[#ebe3d5] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
             >
               <div>
-                <div className="font-mono text-2xl font-bold text-gold-600 mb-3 tabular-nums">
+                <div className="font-editorial text-4xl font-bold text-[#bf923a] mb-4 tabular-nums">
                   {st.step}
                 </div>
-                <h3 className="font-editorial text-lg font-bold text-[#081226] mb-2">
+                <h3 className="font-editorial text-2xl font-bold text-[#152540] mb-2.5">
                   {st.title}
                 </h3>
-                <p className="text-slate-600 text-xs leading-relaxed">
+                <p className="text-slate-600 text-sm leading-relaxed">
                   {st.description}
                 </p>
               </div>
 
-              <div className="mt-6 pt-3 border-t border-slate-100 text-[11px] text-slate-400">
+              <div className="mt-8 pt-4 border-t border-slate-100 text-xs text-slate-400 font-medium">
                 Simly Dam Road Campus Admissions Team
               </div>
             </div>
@@ -101,90 +100,90 @@ export const AdmissionsView: React.FC<AdmissionsViewProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* Eligibility Matrix */}
-          <div className="lg:col-span-7 bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
-            <div className="p-6 bg-slate-50 border-b border-slate-200">
-              <h3 className="font-editorial text-xl font-bold text-[#081226]">
+          <div className="lg:col-span-7 bg-white rounded-3xl border border-[#ebe3d5] overflow-hidden shadow-sm">
+            <div className="p-8 bg-[#faf8f4] border-b border-[#ebe3d5]">
+              <h3 className="font-editorial text-2xl font-bold text-[#152540]">
                 Age Eligibility Criteria (as of 31st August)
               </h3>
-              <p className="text-xs text-slate-500 mt-1">
-                Standard guidelines for placement across Montessori and Primary divisions.
+              <p className="text-sm text-slate-500 mt-1.5 font-normal">
+                Standard placement guidelines across Montessori and Primary divisions.
               </p>
             </div>
 
-            <div className="divide-y divide-slate-100 text-xs">
-              <div className="p-4 flex justify-between items-center bg-slate-50/50 font-semibold text-slate-700">
+            <div className="divide-y divide-slate-100 text-sm">
+              <div className="p-4 sm:p-5 flex justify-between items-center bg-[#faf8f4]/60 font-bold text-[#152540]">
                 <span>Grade / Class Level</span>
                 <span>Recommended Age</span>
               </div>
-              <div className="p-4 flex justify-between items-center hover:bg-slate-50/50">
-                <span className="font-medium text-slate-900">Montessori Playgroup</span>
-                <span className="text-slate-600">2.5 to 3.5 Years</span>
+              <div className="p-4 sm:p-5 flex justify-between items-center hover:bg-slate-50 transition-colors">
+                <span className="font-semibold text-slate-800">Montessori Playgroup</span>
+                <span className="text-slate-600 font-medium">2.5 to 3.5 Years</span>
               </div>
-              <div className="p-4 flex justify-between items-center hover:bg-slate-50/50">
-                <span className="font-medium text-slate-900">Montessori Nursery</span>
-                <span className="text-slate-600">3.5 to 4.5 Years</span>
+              <div className="p-4 sm:p-5 flex justify-between items-center hover:bg-slate-50 transition-colors">
+                <span className="font-semibold text-slate-800">Montessori Nursery</span>
+                <span className="text-slate-600 font-medium">3.5 to 4.5 Years</span>
               </div>
-              <div className="p-4 flex justify-between items-center hover:bg-slate-50/50">
-                <span className="font-medium text-slate-900">Montessori Prep / Kindergarten</span>
-                <span className="text-slate-600">4.5 to 5.5 Years</span>
+              <div className="p-4 sm:p-5 flex justify-between items-center hover:bg-slate-50 transition-colors">
+                <span className="font-semibold text-slate-800">Montessori Prep / Kindergarten</span>
+                <span className="text-slate-600 font-medium">4.5 to 5.5 Years</span>
               </div>
-              <div className="p-4 flex justify-between items-center hover:bg-slate-50/50">
-                <span className="font-medium text-slate-900">Grade 1 (Elementary Foundation)</span>
-                <span className="text-slate-600">5.5 to 6.5 Years</span>
+              <div className="p-4 sm:p-5 flex justify-between items-center hover:bg-slate-50 transition-colors">
+                <span className="font-semibold text-slate-800">Grade 1 (Elementary Foundation)</span>
+                <span className="text-slate-600 font-medium">5.5 to 6.5 Years</span>
               </div>
-              <div className="p-4 flex justify-between items-center hover:bg-slate-50/50">
-                <span className="font-medium text-slate-900">Middle School (Grades 6 to 8)</span>
-                <span className="text-slate-600">11 to 13 Years</span>
+              <div className="p-4 sm:p-5 flex justify-between items-center hover:bg-slate-50 transition-colors">
+                <span className="font-semibold text-slate-800">Middle School (Grades 6 to 8)</span>
+                <span className="text-slate-600 font-medium">11 to 13 Years</span>
               </div>
-              <div className="p-4 flex justify-between items-center hover:bg-slate-50/50">
-                <span className="font-medium text-slate-900">Secondary Matric (SSC 9 &amp; 10)</span>
-                <span className="text-slate-600">14+ Years (Subject to diagnostic test)</span>
+              <div className="p-4 sm:p-5 flex justify-between items-center hover:bg-slate-50 transition-colors">
+                <span className="font-semibold text-slate-800">Secondary Matric (SSC 9 &amp; 10)</span>
+                <span className="text-slate-600 font-medium">14+ Years (Subject to diagnostic assessment)</span>
               </div>
             </div>
           </div>
 
           {/* Documentation Checklist */}
-          <div className="lg:col-span-5 bg-white rounded-xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-5">
+          <div className="lg:col-span-5 bg-white rounded-3xl border border-[#ebe3d5] p-8 sm:p-10 shadow-sm space-y-6">
             <div>
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gold-600">
-                <FileText className="w-4 h-4" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-[#bf923a] text-xs font-bold uppercase tracking-wider border border-amber-200 mb-2">
+                <FileText className="w-3.5 h-3.5" />
                 <span>Verification Checklist</span>
               </div>
-              <h3 className="font-editorial text-xl font-bold text-[#081226] mt-1">
+              <h3 className="font-editorial text-2xl font-bold text-[#152540]">
                 Required Enrolment Documents
               </h3>
-              <p className="text-xs text-slate-500 mt-1">
-                Please prepare these documents for the physical verification at our Admissions Office:
+              <p className="text-sm text-slate-500 mt-1 leading-relaxed">
+                Please prepare these documents for verification at our Admissions Office:
               </p>
             </div>
 
-            <ul className="space-y-3 text-xs text-slate-700">
-              <li className="flex items-start gap-2.5">
+            <ul className="space-y-3.5 text-xs sm:text-sm text-slate-700 font-medium">
+              <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <span>Original &amp; copy of Nadra Birth Certificate / B-Form</span>
               </li>
-              <li className="flex items-start gap-2.5">
+              <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <span>4 recent passport-size blue background photographs of the scholar</span>
               </li>
-              <li className="flex items-start gap-2.5">
+              <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <span>Copy of Father &amp; Mother’s CNIC</span>
               </li>
-              <li className="flex items-start gap-2.5">
+              <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <span>School Leaving Certificate (SLC) &amp; previous report card (for Class 1 and above)</span>
+                <span>School Leaving Certificate (SLC) &amp; report card (Class 1 and above)</span>
               </li>
-              <li className="flex items-start gap-2.5">
+              <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <span>Immunization / vaccination record copy</span>
               </li>
             </ul>
 
-            <div className="pt-4 border-t border-slate-100 flex flex-col gap-2.5">
+            <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
               <button
                 onClick={onOpenApplyModal}
-                className="w-full py-2.5 text-xs font-semibold text-white bg-[#081226] hover:bg-[#132752] rounded transition-colors text-center"
+                className="w-full py-3.5 text-sm font-bold text-white bg-[#152540] hover:bg-[#213c68] rounded-full transition-all text-center shadow-md hover:shadow-lg"
               >
                 Apply Online Now
               </button>
@@ -192,7 +191,7 @@ export const AdmissionsView: React.FC<AdmissionsViewProps> = ({
                 href={`https://wa.me/${SCHOOL_INFO.whatsappRaw}?text=${encodeURIComponent('Hello Pearl Hillian Admissions Desk, I would like to confirm required documents for my child.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 text-xs font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 rounded transition-colors text-center flex items-center justify-center gap-1.5"
+                className="w-full py-3 text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 rounded-full transition-colors text-center flex items-center justify-center gap-2 border border-emerald-200"
               >
                 <MessageCircle className="w-4 h-4 text-emerald-600" />
                 <span>Inquire on WhatsApp</span>
@@ -204,21 +203,21 @@ export const AdmissionsView: React.FC<AdmissionsViewProps> = ({
 
       {/* Tuition Transparency Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="p-8 sm:p-10 rounded-2xl bg-slate-100 border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-amber-500/10 via-[#faf8f4] to-amber-500/10 border border-[#ebe3d5] flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
           <div>
-            <h3 className="font-editorial text-2xl font-bold text-[#081226]">
+            <h3 className="font-editorial text-2xl sm:text-3xl font-bold text-[#152540]">
               Tuition Transparency &amp; Sibling Concessions
             </h3>
-            <p className="text-slate-600 text-xs sm:text-sm mt-1 max-w-xl">
+            <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-xl leading-relaxed">
               Pearl Hillian provides premium private school facilities with transparent, regulated fee tiers. We offer 15% sibling concessions as well as merit scholarships for top academic achievers.
             </p>
           </div>
 
           <button
             onClick={onOpenFeeModal}
-            className="px-6 py-3 text-xs font-semibold text-white bg-[#081226] hover:bg-[#132752] rounded-md transition-colors shrink-0 flex items-center gap-2 shadow-sm"
+            className="px-7 py-3.5 text-sm font-bold text-white bg-[#152540] hover:bg-[#213c68] rounded-full transition-all shrink-0 flex items-center gap-2 shadow-md hover:shadow-lg"
           >
-            <Calculator className="w-4 h-4 text-gold-400" />
+            <Calculator className="w-4 h-4 text-[#eacd72]" />
             <span>Launch Fee Estimator Tool</span>
           </button>
         </div>
