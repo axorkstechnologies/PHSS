@@ -3,6 +3,9 @@ import montessoriImg from '../assets/images/montessori_early_years_1791969319286
 import scienceImg from '../assets/images/science_stem_lab_1791969320174.jpg';
 import libraryImg from '../assets/images/library_scholarship_1791969320309.jpg';
 import sportsImg from '../assets/images/sports_campus_life_1791969320456.jpg';
+import schoolBuildingImg from '../assets/images/school_building_original.jpeg';
+import labStudentsImg from '../assets/images/lab_students_experiment.jpeg';
+import sportsTrackImg from '../assets/images/sports_track_children.jpeg';
 import { AcademicProgram, GalleryItem, Milestone, Testimonial } from '../types';
 
 export const SCHOOL_INFO = {
@@ -24,10 +27,13 @@ export const SCHOOL_INFO = {
 
 export const IMAGES = {
   hero: heroImg,
+  schoolBuilding: schoolBuildingImg,
   montessori: montessoriImg,
   science: scienceImg,
+  labStudents: labStudentsImg,
   library: libraryImg,
   sports: sportsImg,
+  sportsTrack: sportsTrackImg,
 };
 
 export const STATS = [
