@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PageTab } from '../types';
 import { SCHOOL_INFO } from '../data/schoolData';
-import { Phone, MessageCircle, Menu, X, ArrowUpRight, GraduationCap, Sparkles } from 'lucide-react';
+import { Phone, MessageCircle, Menu, X, ArrowUpRight, GraduationCap } from 'lucide-react';
 
 interface HeaderProps {
   activeTab: PageTab;
@@ -42,16 +42,21 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <>
-      {/* Top Welcome & Utility Strip with Warm School Feeling */}
-      <div className="bg-[#152540] text-slate-200 border-b border-[#213c68]/50 text-xs py-2 px-4 sm:px-8 transition-colors">
+      {/* Top Welcome & Utility Strip with Dark Blue Top Bar */}
+      <div className="bg-[#0b1329] text-slate-200 border-b border-slate-800 text-xs py-2 px-4 sm:px-8 transition-colors">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-400/15 text-[#eacd72] text-[11px] font-semibold border border-[#d9af4c]/30">
-              <Sparkles className="w-3 h-3 text-[#eacd72]" />
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/10 text-white text-[11px] font-medium border border-white/15">
               <span>Session 2025–26 Enrolling</span>
             </span>
-            <span aria-hidden="true" className="text-slate-500 hidden sm:inline">·</span>
+            <span aria-hidden="true" className="text-slate-600 hidden sm:inline">·</span>
             <span className="text-slate-300 hidden sm:inline font-medium">Simly Dam Road Campus, Islamabad</span>
+            <span aria-hidden="true" className="text-slate-600 hidden sm:inline">·</span>
+            {/* 18 Years: "18" in yellow & slightly larger, rest in white */}
+            <span className="hidden sm:inline-flex items-center gap-1">
+              <span className="text-[#f59e0b] font-bold text-sm">18</span>
+              <span className="text-white font-medium">Years of Excellence</span>
+            </span>
           </div>
 
           <div className="flex items-center gap-4 text-xs">
@@ -59,7 +64,7 @@ export const Header: React.FC<HeaderProps> = ({
               href={`tel:${SCHOOL_INFO.phone}`}
               className="flex items-center gap-1.5 hover:text-white transition-colors font-medium text-slate-200"
             >
-              <Phone className="w-3.5 h-3.5 text-[#eacd72]" />
+              <Phone className="w-3.5 h-3.5 text-[#f59e0b]" />
               <span>{SCHOOL_INFO.phone}</span>
             </a>
             <span aria-hidden="true" className="text-slate-600 hidden md:inline">·</span>
@@ -80,31 +85,31 @@ export const Header: React.FC<HeaderProps> = ({
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#faf8f4]/95 backdrop-blur-md shadow-md border-b border-[#ebe3d5] py-3'
-            : 'bg-[#faf8f4] border-b border-[#ebe3d5]/70 py-4'
+            ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200 py-3'
+            : 'bg-white border-b border-slate-100 py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between gap-6">
-          {/* Brand Wordmark & Crest with Warm School Identity */}
+          {/* Brand Wordmark: PEARL HILLIAN in current color + School System Islamabad in lighter vibrant blue */}
           <button
             onClick={() => handleNavClick('home')}
             className="flex items-center gap-3.5 text-left focus:outline-none group shrink-0"
           >
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#152540] to-[#213c68] text-white flex items-center justify-center font-editorial text-2xl font-bold tracking-wider shadow-md group-hover:scale-105 transition-all border border-[#d9af4c]/40 ring-2 ring-white">
-              <span className="text-white drop-shadow-sm">P</span>
+            <div className="w-10 h-10 rounded-xl bg-[#0b1329] text-white flex items-center justify-center font-editorial text-2xl font-bold tracking-wider shadow-sm group-hover:scale-105 transition-all">
+              <span>P</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-editorial text-2xl md:text-[26px] font-bold text-[#152540] tracking-tight whitespace-nowrap leading-none group-hover:text-[#213c68] transition-colors">
-                Pearl Hillian
+              <span className="font-editorial text-2xl md:text-[25px] font-bold text-[#0b1329] tracking-tight whitespace-nowrap leading-none">
+                PEARL HILLIAN
               </span>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#bf923a] mt-1">
-                School System · Islamabad
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#0284c7] mt-1">
+                School System Islamabad
               </span>
             </div>
           </button>
 
-          {/* Navigation Links with Warm Rounded Pills */}
-          <nav className="hidden lg:flex items-center gap-1.5 p-1 bg-white/70 rounded-full border border-[#ebe3d5] shadow-xs">
+          {/* Navigation Links with Clean Pill Styling */}
+          <nav className="hidden lg:flex items-center gap-1 p-1 bg-slate-50 rounded-full border border-slate-200">
             {navLinks.map((link) => {
               const isActive = activeTab === link.id;
               return (
@@ -113,8 +118,8 @@ export const Header: React.FC<HeaderProps> = ({
                   onClick={() => handleNavClick(link.id)}
                   className={`px-4 py-2 text-sm font-semibold rounded-full transition-all whitespace-nowrap ${
                     isActive
-                      ? 'bg-[#152540] text-white shadow-sm'
-                      : 'text-slate-600 hover:text-[#152540] hover:bg-slate-100/70'
+                      ? 'bg-[#0b1329] text-white shadow-sm'
+                      : 'text-slate-600 hover:text-[#0b1329] hover:bg-white'
                   }`}
                 >
                   {link.label}
@@ -123,20 +128,20 @@ export const Header: React.FC<HeaderProps> = ({
             })}
           </nav>
 
-          {/* Call to Action Buttons */}
+          {/* Call to Action Button: Yellow "Apply for Admission" */}
           <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={onOpenApplyModal}
-              className="px-5 py-2.5 text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-[#152540] to-[#213c68] hover:from-[#1b3054] hover:to-[#294d82] rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap flex items-center gap-2 border border-[#d9af4c]/30"
+              className="px-5 py-2.5 text-xs sm:text-sm font-bold text-[#0b1329] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap flex items-center gap-1.5"
             >
               <span>Apply for Admission</span>
-              <ArrowUpRight className="w-4 h-4 text-[#eacd72]" />
+              <ArrowUpRight className="w-4 h-4 text-[#0b1329]" />
             </button>
 
             {/* Mobile Hamburger toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-slate-700 hover:text-[#152540] hover:bg-slate-100 rounded-lg focus:outline-none transition-colors"
+              className="lg:hidden p-2 text-slate-700 hover:text-[#0b1329] hover:bg-slate-100 rounded-lg focus:outline-none transition-colors"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -146,7 +151,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-x-0 top-full bg-[#faf8f4] border-b border-[#ebe3d5] shadow-2xl px-6 py-6 transition-all animate-fadeIn">
+          <div className="lg:hidden fixed inset-x-0 top-full bg-white border-b border-slate-200 shadow-2xl px-6 py-6 transition-all animate-fadeIn">
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <button
@@ -154,23 +159,23 @@ export const Header: React.FC<HeaderProps> = ({
                   onClick={() => handleNavClick(link.id)}
                   className={`text-left text-sm py-2.5 px-4 rounded-xl font-semibold transition-all ${
                     activeTab === link.id
-                      ? 'bg-[#152540] text-white shadow-sm'
-                      : 'text-slate-700 hover:bg-white'
+                      ? 'bg-[#0b1329] text-white shadow-sm'
+                      : 'text-slate-700 hover:bg-slate-50'
                   }`}
                 >
                   {link.label}
                 </button>
               ))}
 
-              <div className="pt-4 mt-2 border-t border-[#ebe3d5] flex flex-col gap-3">
+              <div className="pt-4 mt-2 border-t border-slate-100 flex flex-col gap-3">
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
                     onOpenApplyModal();
                   }}
-                  className="w-full py-3 text-center text-xs font-bold text-white bg-[#152540] rounded-xl shadow-md flex items-center justify-center gap-2"
+                  className="w-full py-3 text-center text-xs font-bold text-[#0b1329] bg-[#f59e0b] hover:bg-[#d97706] rounded-xl shadow-md flex items-center justify-center gap-2"
                 >
-                  <GraduationCap className="w-4 h-4 text-[#eacd72]" />
+                  <GraduationCap className="w-4 h-4 text-[#0b1329]" />
                   <span>Start Admission Application</span>
                 </button>
                 <a

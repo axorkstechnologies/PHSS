@@ -1,7 +1,7 @@
 import React from 'react';
 import { SCHOOL_INFO } from '../data/schoolData';
 import { PageTab } from '../types';
-import { Phone, Mail, MapPin, MessageCircle, ArrowRight, ShieldCheck, Award, Heart } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, ArrowRight, ShieldCheck, Award } from 'lucide-react';
 
 interface FooterProps {
   setActiveTab: (tab: PageTab) => void;
@@ -17,13 +17,13 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
   };
 
   return (
-    <footer className="bg-[#152540] text-slate-300 border-t border-[#213c68]/60">
-      {/* Upper CTA Banner with Warm School Invitation */}
-      <div className="border-b border-[#213c68]/50 py-14 px-4 sm:px-8 bg-gradient-to-r from-[#152540] via-[#1b3054] to-[#152540]">
+    <footer className="bg-[#0b1329] text-slate-300 border-t border-slate-800">
+      {/* Upper CTA Banner with Dark Blue & Yellow Action */}
+      <div className="border-b border-slate-800 py-14 px-4 sm:px-8 bg-gradient-to-r from-[#0b1329] via-[#101b38] to-[#0b1329]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#f2dc9e] uppercase mb-2">
-              <Award className="w-4 h-4 text-[#eacd72]" />
+            <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#f59e0b] uppercase mb-2">
+              <Award className="w-4 h-4 text-[#f59e0b]" />
               <span>Admissions Open · Academic Session {SCHOOL_INFO.academicSession}</span>
             </div>
             <h3 className="font-editorial text-2xl sm:text-4xl font-bold text-white leading-tight">
@@ -35,9 +35,10 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
           </div>
 
           <div className="flex flex-wrap items-center gap-3.5 shrink-0">
+            {/* Button in exact client-requested yellow */}
             <button
               onClick={onOpenApplyModal}
-              className="px-6 py-3.5 text-xs sm:text-sm font-bold text-[#152540] bg-white hover:bg-[#faf8f4] rounded-full transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
+              className="px-7 py-3.5 text-xs sm:text-sm font-bold text-[#0b1329] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
             >
               Apply for Admission
             </button>
@@ -58,34 +59,34 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Col 1: Identity */}
         <div>
-          <div className="flex items-center gap-3.5 mb-4">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#213c68] to-[#152540] text-white flex items-center justify-center font-editorial text-2xl font-bold border border-[#d9af4c]/40 shadow-sm">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center font-editorial text-2xl font-bold border border-white/15 shadow-sm">
               P
             </div>
             <div>
               <span className="font-editorial text-2xl font-bold text-white tracking-wide block leading-none">
-                Pearl Hillian
+                PEARL HILLIAN
               </span>
-              <span className="text-[10px] uppercase font-bold tracking-wider text-[#eacd72]">
-                School System · Est. 2008
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#0284c7]">
+                School System Islamabad
               </span>
             </div>
           </div>
-          <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-5 font-normal">
+          <p className="text-slate-400 text-xs sm:text-sm leading-relaxed mb-5 font-normal">
             Eighteen years of uninterrupted educational distinction in Islamabad. Cultivating intellectual rigor, moral integrity, and modern STEM capabilities within an inspiring mountain sanctuary.
           </p>
           <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
-            <ShieldCheck className="w-4 h-4 text-[#eacd72]" />
+            <ShieldCheck className="w-4 h-4 text-[#f59e0b]" />
             <span>FBISE Registered · Certified Montessori Wing</span>
           </div>
         </div>
 
         {/* Col 2: Academic Divisions */}
         <div>
-          <h4 className="text-xs font-bold uppercase tracking-wider text-[#f2dc9e] mb-4">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
             Academic Programs
           </h4>
-          <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
+          <ul className="space-y-2.5 text-xs sm:text-sm text-slate-400">
             <li>
               <button
                 onClick={() => handleNavigate('academics')}
@@ -131,16 +132,16 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
 
         {/* Col 3: Quick Navigation */}
         <div>
-          <h4 className="text-xs font-bold uppercase tracking-wider text-[#f2dc9e] mb-4">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
             Institutional
           </h4>
-          <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
+          <ul className="space-y-2.5 text-xs sm:text-sm text-slate-400">
             <li>
               <button
                 onClick={() => handleNavigate('about')}
                 className="hover:text-white transition-colors text-left"
               >
-                18 Years Heritage &amp; Vision
+                Heritage &amp; Institutional Vision
               </button>
             </li>
             <li>
@@ -170,7 +171,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
             <li>
               <button
                 onClick={onOpenApplyModal}
-                className="text-[#eacd72] hover:text-white transition-colors flex items-center gap-1.5 font-bold"
+                className="text-[#f59e0b] hover:text-white transition-colors flex items-center gap-1.5 font-bold"
               >
                 <span>Online Admission Portal</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -181,16 +182,16 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
 
         {/* Col 4: Campus Contact Information */}
         <div>
-          <h4 className="text-xs font-bold uppercase tracking-wider text-[#f2dc9e] mb-4">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
             Simly Dam Road Campus
           </h4>
-          <ul className="space-y-3.5 text-xs sm:text-sm text-slate-300">
+          <ul className="space-y-3.5 text-xs sm:text-sm text-slate-400">
             <li className="flex items-start gap-2.5">
-              <MapPin className="w-4 h-4 text-[#eacd72] shrink-0 mt-0.5" />
+              <MapPin className="w-4 h-4 text-[#f59e0b] shrink-0 mt-0.5" />
               <span>Simly Dam Road Campus, Islamabad Capital Territory, Pakistan</span>
             </li>
             <li className="flex items-center gap-2.5">
-              <Phone className="w-4 h-4 text-[#eacd72] shrink-0" />
+              <Phone className="w-4 h-4 text-[#f59e0b] shrink-0" />
               <a href={`tel:${SCHOOL_INFO.phone}`} className="hover:text-white transition-colors font-medium">
                 {SCHOOL_INFO.phone}
               </a>
@@ -207,7 +208,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
               </a>
             </li>
             <li className="flex items-center gap-2.5">
-              <Mail className="w-4 h-4 text-[#eacd72] shrink-0" />
+              <Mail className="w-4 h-4 text-[#f59e0b] shrink-0" />
               <a
                 href={`mailto:${SCHOOL_INFO.email}`}
                 className="hover:text-white transition-colors truncate"
@@ -219,16 +220,19 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
         </div>
       </div>
 
-      {/* Bottom Legal Bar */}
-      <div className="border-t border-[#213c68]/50 py-6 px-4 sm:px-8 text-center text-xs text-slate-400">
+      {/* Bottom Legal Bar: 18 in yellow & larger, rest in white */}
+      <div className="border-t border-slate-800 py-6 px-4 sm:px-8 text-center text-xs text-slate-400">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <p>© {currentYear} Pearl Hillian School System. All rights reserved.</p>
-          <div className="flex items-center gap-4 text-slate-400">
+          <div className="flex items-center gap-3">
             <span>Islamabad Capital Territory</span>
             <span aria-hidden="true">·</span>
             <span>Simly Dam Road Campus</span>
             <span aria-hidden="true">·</span>
-            <span>18 Years of Excellence</span>
+            <span className="inline-flex items-center gap-1">
+              <span className="text-[#f59e0b] font-bold text-sm">18</span>
+              <span className="text-white font-medium">Years of Excellence</span>
+            </span>
           </div>
         </div>
       </div>

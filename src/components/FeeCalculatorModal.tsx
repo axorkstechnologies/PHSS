@@ -41,12 +41,12 @@ export const FeeCalculatorModal: React.FC<FeeCalculatorModalProps> = ({
   const oneTimeAdmissionRegistration = hasAdmissionFee ? 18000 : 0;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#152540]/75 backdrop-blur-sm animate-fadeIn">
-      <div className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-[#ebe3d5] overflow-hidden max-h-[92vh] flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#0b1329]/80 backdrop-blur-sm animate-fadeIn">
+      <div className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden max-h-[92vh] flex flex-col">
         {/* Header */}
-        <div className="bg-[#152540] text-white px-8 py-6 flex items-center justify-between border-b border-[#213c68]/60">
+        <div className="bg-[#0b1329] text-white px-8 py-6 flex items-center justify-between border-b border-slate-800">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-[#eacd72] border border-white/10">
+            <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-[#f59e0b] border border-white/10">
               <Calculator className="w-5 h-5" />
             </div>
             <div>
@@ -80,12 +80,12 @@ export const FeeCalculatorModal: React.FC<FeeCalculatorModalProps> = ({
                   onClick={() => setGradeTier(tier.id as any)}
                   className={`p-3 rounded-2xl border text-left transition-all ${
                     gradeTier === tier.id
-                      ? 'border-[#152540] bg-[#152540] text-white shadow-md'
-                      : 'border-[#ebe3d5] bg-[#faf8f4] text-slate-700 hover:border-slate-300'
+                      ? 'border-[#0b1329] bg-[#0b1329] text-white shadow-md'
+                      : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300'
                   }`}
                 >
                   <div className="font-bold text-xs sm:text-sm">{tier.label}</div>
-                  <div className={`text-[11px] mt-0.5 ${gradeTier === tier.id ? 'text-[#f2dc9e]' : 'text-slate-500'}`}>
+                  <div className={`text-[11px] mt-0.5 ${gradeTier === tier.id ? 'text-[#f59e0b]' : 'text-slate-500'}`}>
                     {tier.detail}
                   </div>
                 </button>
@@ -95,7 +95,7 @@ export const FeeCalculatorModal: React.FC<FeeCalculatorModalProps> = ({
 
           {/* Options */}
           <div className="space-y-3 pt-2 border-t border-slate-100">
-            <div className="flex items-center justify-between p-4 rounded-2xl bg-[#faf8f4] border border-[#ebe3d5]">
+            <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-50 border border-slate-200">
               <div>
                 <div className="font-bold text-slate-800 text-sm">Campus Transport Service</div>
                 <div className="text-xs text-slate-500 mt-0.5">Dedicated van shuttles (Simly Dam Rd, Bhara Kahu, Park View)</div>
@@ -104,11 +104,11 @@ export const FeeCalculatorModal: React.FC<FeeCalculatorModalProps> = ({
                 type="checkbox"
                 checked={includeTransport}
                 onChange={(e) => setIncludeTransport(e.target.checked)}
-                className="w-5 h-5 text-[#152540] rounded border-slate-300 focus:ring-[#152540]"
+                className="w-5 h-5 text-[#0b1329] rounded border-slate-300 focus:ring-[#0b1329]"
               />
             </div>
 
-            <div className="flex items-center justify-between p-4 rounded-2xl bg-[#faf8f4] border border-[#ebe3d5]">
+            <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-50 border border-slate-200">
               <div>
                 <div className="font-bold text-slate-800 text-sm">Sibling Concession (15%)</div>
                 <div className="text-xs text-slate-500 mt-0.5">Concession applied on tuition for enrolled brother/sister</div>
@@ -124,7 +124,7 @@ export const FeeCalculatorModal: React.FC<FeeCalculatorModalProps> = ({
               </select>
             </div>
 
-            <div className="flex items-center justify-between p-4 rounded-2xl bg-[#faf8f4] border border-[#ebe3d5]">
+            <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-50 border border-slate-200">
               <div>
                 <div className="font-bold text-slate-800 text-sm">Include One-Time Registration Fee</div>
                 <div className="text-xs text-slate-500 mt-0.5">Security deposit, admission kit &amp; initial file processing</div>
@@ -133,13 +133,13 @@ export const FeeCalculatorModal: React.FC<FeeCalculatorModalProps> = ({
                 type="checkbox"
                 checked={hasAdmissionFee}
                 onChange={(e) => setHasAdmissionFee(e.target.checked)}
-                className="w-5 h-5 text-[#152540] rounded border-slate-300 focus:ring-[#152540]"
+                className="w-5 h-5 text-[#0b1329] rounded border-slate-300 focus:ring-[#0b1329]"
               />
             </div>
           </div>
 
           {/* Breakdown summary */}
-          <div className="p-5 bg-[#faf8f4] rounded-2xl border border-[#ebe3d5] space-y-2.5">
+          <div className="p-5 bg-slate-50 rounded-2xl border border-slate-200 space-y-2.5">
             <div className="flex justify-between text-slate-600 text-sm">
               <span>Base Monthly Tuition:</span>
               <span className="font-semibold font-mono tabular-nums">PKR {baseTuition.toLocaleString()}</span>
@@ -162,7 +162,7 @@ export const FeeCalculatorModal: React.FC<FeeCalculatorModalProps> = ({
             )}
             <div className="pt-3 border-t border-slate-200 flex justify-between items-baseline">
               <span className="font-bold text-slate-900 text-base">Estimated Monthly Payable:</span>
-              <span className="font-editorial text-3xl font-bold text-[#152540] font-mono tabular-nums">
+              <span className="font-editorial text-3xl font-bold text-[#0b1329] font-mono tabular-nums">
                 PKR {monthlyNet.toLocaleString()}
               </span>
             </div>
@@ -175,11 +175,11 @@ export const FeeCalculatorModal: React.FC<FeeCalculatorModalProps> = ({
           </div>
 
           <div className="flex items-center gap-2.5 text-xs text-slate-500 font-medium">
-            <ShieldCheck className="w-4 h-4 text-[#bf923a] shrink-0" />
+            <ShieldCheck className="w-4 h-4 text-[#f59e0b] shrink-0" />
             <span>Merit-based scholarships available for outstanding academic &amp; sports performers.</span>
           </div>
 
-          {/* Action */}
+          {/* Action: Yellow button */}
           <div className="pt-4 border-t border-slate-200 flex items-center justify-end gap-3">
             <button
               onClick={onClose}
@@ -192,7 +192,7 @@ export const FeeCalculatorModal: React.FC<FeeCalculatorModalProps> = ({
                 onClose();
                 onOpenApplyModal();
               }}
-              className="px-6 py-2.5 text-xs sm:text-sm font-bold text-white bg-[#152540] hover:bg-[#213c68] rounded-full transition-all shadow-md hover:shadow-lg"
+              className="px-6 py-2.5 text-xs sm:text-sm font-bold text-[#0b1329] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-md hover:shadow-lg"
             >
               Apply With This Estimate
             </button>

@@ -64,12 +64,12 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#152540]/75 backdrop-blur-sm animate-fadeIn">
-      <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-[#ebe3d5] overflow-hidden max-h-[92vh] flex flex-col">
-        {/* Modal Header */}
-        <div className="bg-[#152540] text-white px-8 py-6 flex items-center justify-between border-b border-[#213c68]/60">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#0b1329]/80 backdrop-blur-sm animate-fadeIn">
+      <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden max-h-[92vh] flex flex-col">
+        {/* Modal Header: Deep Blackish Navy */}
+        <div className="bg-[#0b1329] text-white px-8 py-6 flex items-center justify-between border-b border-slate-800">
           <div>
-            <div className="flex items-center gap-2 text-xs font-bold tracking-wider text-[#eacd72] uppercase">
+            <div className="flex items-center gap-2 text-xs font-bold tracking-wider text-[#f59e0b] uppercase">
               <Building2 className="w-3.5 h-3.5" />
               <span>Simly Dam Road Campus · Admissions 2025–26</span>
             </div>
@@ -93,16 +93,16 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
               <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-4 border border-emerald-200">
                 <CheckCircle2 className="w-9 h-9" />
               </div>
-              <h3 className="font-editorial text-3xl font-bold text-[#152540]">
+              <h3 className="font-editorial text-3xl font-bold text-[#0b1329]">
                 Application Successfully Registered
               </h3>
               <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-md mx-auto leading-relaxed">
                 Thank you for applying to Pearl Hillian School System. Our Admissions Directorate will review your application and contact you within 24 hours to schedule your diagnostic assessment and campus walk-through.
               </p>
 
-              <div className="my-6 p-5 bg-[#faf8f4] border border-[#ebe3d5] rounded-2xl max-w-sm mx-auto text-center">
-                <div className="text-xs uppercase tracking-widest text-[#bf923a] font-bold">Application Reference Code</div>
-                <div className="font-editorial text-2xl font-bold text-[#152540] mt-1 tabular-nums">
+              <div className="my-6 p-5 bg-slate-50 border border-slate-200 rounded-2xl max-w-sm mx-auto text-center">
+                <div className="text-xs uppercase tracking-widest text-[#0b1329] font-bold">Application Reference Code</div>
+                <div className="font-editorial text-2xl font-bold text-[#0b1329] mt-1 tabular-nums">
                   {submittedCode}
                 </div>
                 <div className="text-xs text-slate-500 mt-1">Please quote this number during campus visits</div>
@@ -128,8 +128,8 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="bg-[#faf8f4] p-4 rounded-2xl border border-[#ebe3d5] text-xs sm:text-sm text-slate-600 flex items-center gap-3">
-                <GraduationCap className="w-5 h-5 text-[#152540] shrink-0" />
+              <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-xs sm:text-sm text-slate-600 flex items-center gap-3">
+                <GraduationCap className="w-5 h-5 text-[#0b1329] shrink-0" />
                 <span>
                   Applications are currently active for Session 2025–2026 across Montessori, Primary, Middle, and Matriculation streams.
                 </span>
@@ -137,7 +137,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
 
               {/* Scholar Details */}
               <div className="space-y-4">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#bf923a] border-b border-slate-100 pb-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#0b1329] border-b border-slate-100 pb-2">
                   1. Scholar Information
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -152,7 +152,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
                       value={formData.studentName}
                       onChange={handleChange}
                       placeholder="e.g. Ibrahim Khan"
-                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#152540] focus:ring-2 focus:ring-[#152540]/20 outline-none transition-all"
+                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#0b1329] focus:ring-2 focus:ring-[#0b1329]/20 outline-none transition-all"
                     />
                   </div>
 
@@ -164,7 +164,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
                       name="gradeApplyingFor"
                       value={formData.gradeApplyingFor}
                       onChange={handleChange}
-                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#152540] focus:ring-2 focus:ring-[#152540]/20 outline-none bg-white transition-all"
+                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#0b1329] focus:ring-2 focus:ring-[#0b1329]/20 outline-none bg-white transition-all"
                     >
                       <option value="Montessori Playgroup (Age 2.5 - 3.5)">Montessori Playgroup (Age 2.5 - 3.5)</option>
                       <option value="Montessori Nursery (Age 3.5 - 4.5)">Montessori Nursery (Age 3.5 - 4.5)</option>
@@ -186,7 +186,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
                       name="dateOfBirth"
                       value={formData.dateOfBirth}
                       onChange={handleChange}
-                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#152540] focus:ring-2 focus:ring-[#152540]/20 outline-none transition-all"
+                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#0b1329] focus:ring-2 focus:ring-[#0b1329]/20 outline-none transition-all"
                     />
                   </div>
 
@@ -198,7 +198,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
                       name="gender"
                       value={formData.gender}
                       onChange={handleChange}
-                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#152540] focus:ring-2 focus:ring-[#152540]/20 outline-none bg-white transition-all"
+                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#0b1329] focus:ring-2 focus:ring-[#0b1329]/20 outline-none bg-white transition-all"
                     >
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
@@ -209,7 +209,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
 
               {/* Parent Details */}
               <div className="space-y-4 pt-2">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#bf923a] border-b border-slate-100 pb-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#0b1329] border-b border-slate-100 pb-2">
                   2. Parent / Guardian Contact
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -224,7 +224,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
                       value={formData.parentName}
                       onChange={handleChange}
                       placeholder="e.g. Dr. A. Qureshi"
-                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#152540] focus:ring-2 focus:ring-[#152540]/20 outline-none transition-all"
+                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#0b1329] focus:ring-2 focus:ring-[#0b1329]/20 outline-none transition-all"
                     />
                   </div>
 
@@ -239,7 +239,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
                       value={formData.parentPhone}
                       onChange={handleChange}
                       placeholder="e.g. 0300 1234567"
-                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#152540] focus:ring-2 focus:ring-[#152540]/20 outline-none transition-all"
+                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#0b1329] focus:ring-2 focus:ring-[#0b1329]/20 outline-none transition-all"
                     />
                   </div>
 
@@ -253,7 +253,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
                       value={formData.parentEmail}
                       onChange={handleChange}
                       placeholder="parent@example.com"
-                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#152540] focus:ring-2 focus:ring-[#152540]/20 outline-none transition-all"
+                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#0b1329] focus:ring-2 focus:ring-[#0b1329]/20 outline-none transition-all"
                     />
                   </div>
 
@@ -267,7 +267,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
                       value={formData.residentialArea}
                       onChange={handleChange}
                       placeholder="e.g. Simly Dam Road / Bhara Kahu / Park View"
-                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#152540] focus:ring-2 focus:ring-[#152540]/20 outline-none transition-all"
+                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#0b1329] focus:ring-2 focus:ring-[#0b1329]/20 outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -275,7 +275,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
 
               {/* Campus Tour Preference */}
               <div className="space-y-4 pt-2">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#bf923a] border-b border-slate-100 pb-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#0b1329] border-b border-slate-100 pb-2">
                   3. Campus Visit &amp; Observations
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -288,7 +288,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
                       name="preferredCampusVisitDate"
                       value={formData.preferredCampusVisitDate}
                       onChange={handleChange}
-                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#152540] focus:ring-2 focus:ring-[#152540]/20 outline-none transition-all"
+                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#0b1329] focus:ring-2 focus:ring-[#0b1329]/20 outline-none transition-all"
                     />
                   </div>
 
@@ -302,7 +302,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
                       value={formData.previousSchool}
                       onChange={handleChange}
                       placeholder="Previous institution name"
-                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#152540] focus:ring-2 focus:ring-[#152540]/20 outline-none transition-all"
+                      className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#0b1329] focus:ring-2 focus:ring-[#0b1329]/20 outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -317,7 +317,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
                     value={formData.notes}
                     onChange={handleChange}
                     placeholder="Any specific academic questions, transport route requirements, or sibling information..."
-                    className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#152540] focus:ring-2 focus:ring-[#152540]/20 outline-none resize-none transition-all"
+                    className="w-full text-sm px-4 py-2.5 border border-slate-300 rounded-xl focus:border-[#0b1329] focus:ring-2 focus:ring-[#0b1329]/20 outline-none resize-none transition-all"
                   />
                 </div>
               </div>
@@ -325,7 +325,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
               {/* Submit Actions */}
               <div className="pt-5 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="text-xs text-slate-500">
-                  Direct Hotline: <strong className="text-[#152540]">{SCHOOL_INFO.phone}</strong>
+                  Direct Hotline: <strong className="text-[#0b1329]">{SCHOOL_INFO.phone}</strong>
                 </div>
 
                 <div className="flex items-center gap-3 w-full sm:w-auto">
@@ -340,7 +340,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
 
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-6 py-2.5 text-xs sm:text-sm font-bold text-white bg-[#152540] hover:bg-[#213c68] rounded-full transition-all shadow-md hover:shadow-lg"
+                    className="w-full sm:w-auto px-7 py-2.5 text-xs sm:text-sm font-bold text-[#0b1329] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-md hover:shadow-lg"
                   >
                     Submit Application
                   </button>
