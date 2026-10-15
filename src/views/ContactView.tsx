@@ -44,20 +44,20 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
   };
 
   return (
-    <div className="space-y-24 md:space-y-32 pb-24">
+    <div className="space-y-16 sm:space-y-24 md:space-y-32 pb-20 sm:pb-24 w-full overflow-x-hidden">
       {/* Editorial Header */}
-      <section className="bg-gradient-to-br from-[#152540] via-[#1b3054] to-[#213c68] text-white py-20 lg:py-28 px-4 sm:px-8 border-b border-white/10 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 text-[#f2dc9e] text-xs font-bold uppercase tracking-wider border border-white/20">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Direct Admissions &amp; Campus Directorate · Islamabad</span>
+      <section className="bg-gradient-to-br from-[#152540] via-[#1b3054] to-[#213c68] text-white py-14 sm:py-20 lg:py-28 px-4 sm:px-8 border-b border-white/10 relative overflow-hidden w-full">
+        <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 relative z-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 text-[#f2dc9e] text-xs font-bold uppercase tracking-wider border border-white/20 max-w-full">
+            <Sparkles className="w-3.5 h-3.5 shrink-0" />
+            <span className="truncate">Direct Admissions &amp; Campus Directorate · Islamabad</span>
           </div>
 
-          <h1 className="font-editorial text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+          <h1 className="font-editorial text-3xl sm:text-5xl lg:text-7xl font-bold leading-tight tracking-tight">
             Connect With Simly Dam Road Campus
           </h1>
 
-          <p className="text-slate-200 text-base sm:text-xl leading-relaxed max-w-2xl mx-auto font-normal">
+          <p className="text-slate-200 text-sm sm:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto font-normal">
             Our admissions counselors and campus administrators are delighted to assist with grade placements, admissions requirements, and private tour reservations.
           </p>
         </div>
@@ -65,9 +65,9 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
 
       {/* Primary Contact Cards Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {/* Card 1: Phone */}
-          <div className="bg-white p-8 rounded-3xl border border-[#ebe3d5] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-[#ebe3d5] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-amber-50 text-[#bf923a] flex items-center justify-center mb-5 border border-amber-200">
                 <Phone className="w-6 h-6" />
@@ -86,7 +86,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
           </div>
 
           {/* Card 2: WhatsApp */}
-          <div className="bg-white p-8 rounded-3xl border border-[#ebe3d5] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-[#ebe3d5] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5 border border-emerald-200">
                 <MessageCircle className="w-6 h-6" />
@@ -110,7 +110,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
           </div>
 
           {/* Card 3: Email */}
-          <div className="bg-white p-8 rounded-3xl border border-[#ebe3d5] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-[#ebe3d5] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#1b3773] flex items-center justify-center mb-5 border border-blue-200">
                 <Mail className="w-6 h-6" />
@@ -129,7 +129,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
           </div>
 
           {/* Card 4: Location */}
-          <div className="bg-white p-8 rounded-3xl border border-[#ebe3d5] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-[#ebe3d5] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-amber-50 text-[#bf923a] flex items-center justify-center mb-5 border border-amber-200">
                 <MapPin className="w-6 h-6" />
@@ -149,20 +149,20 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
 
       {/* Interactive Form & Directions Guide */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
           {/* Inquiry Form */}
-          <div className="lg:col-span-7 bg-white p-8 sm:p-12 rounded-3xl border border-[#ebe3d5] shadow-sm">
-            <div className="mb-8">
-              <h2 className="font-editorial text-3xl sm:text-4xl font-bold text-[#152540]">
+          <div className="lg:col-span-7 bg-white p-5 sm:p-12 rounded-2xl sm:rounded-3xl border border-[#ebe3d5] shadow-sm">
+            <div className="mb-6 sm:mb-8">
+              <h2 className="font-editorial text-2xl sm:text-4xl font-bold text-[#152540]">
                 Send an Admissions Inquiry
               </h2>
-              <p className="text-slate-600 text-sm sm:text-base mt-2">
+              <p className="text-slate-600 text-xs sm:text-base mt-2">
                 Fill out the form below or dispatch your inquiry instantly via WhatsApp.
               </p>
             </div>
 
             {inquirySent ? (
-              <div className="p-8 text-center bg-[#faf8f4] rounded-2xl border border-[#ebe3d5]">
+              <div className="p-6 sm:p-8 text-center bg-[#faf8f4] rounded-2xl border border-[#ebe3d5]">
                 <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
@@ -178,7 +178,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleInquirySubmit} className="space-y-5">
+              <form onSubmit={handleInquirySubmit} className="space-y-4 sm:space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold text-slate-700 mb-1.5">Your Full Name *</label>
@@ -245,11 +245,11 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
                   />
                 </div>
 
-                <div className="pt-3 flex flex-wrap items-center justify-between gap-4">
+                <div className="pt-2 sm:pt-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
                   <button
                     type="button"
                     onClick={handleWhatsAppDirect}
-                    className="px-5 py-3 text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-full flex items-center gap-2 transition-colors"
+                    className="w-full sm:w-auto px-5 py-3 text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-full flex items-center justify-center gap-2 transition-colors text-center"
                   >
                     <MessageCircle className="w-4 h-4 text-emerald-600" />
                     <span>Send Message via WhatsApp</span>
@@ -257,7 +257,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
 
                   <button
                     type="submit"
-                    className="px-7 py-3 text-xs sm:text-sm font-bold text-white bg-[#152540] hover:bg-[#213c68] rounded-full transition-all flex items-center gap-2 shadow-md hover:shadow-lg"
+                    className="w-full sm:w-auto px-7 py-3 text-xs sm:text-sm font-bold text-white bg-[#152540] hover:bg-[#213c68] rounded-full transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg text-center"
                   >
                     <Send className="w-4 h-4 text-[#eacd72]" />
                     <span>Submit Inquiry</span>
@@ -269,7 +269,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
 
           {/* Directions & Campus Access Guide */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-gradient-to-br from-[#152540] to-[#213c68] text-white p-8 sm:p-10 rounded-3xl shadow-xl border border-white/10 space-y-5">
+            <div className="bg-gradient-to-br from-[#152540] to-[#213c68] text-white p-6 sm:p-10 rounded-2xl sm:rounded-3xl shadow-xl border border-white/10 space-y-4 sm:space-y-5">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-[#f2dc9e] text-xs font-bold uppercase tracking-wider border border-white/20">
                 <Navigation className="w-3.5 h-3.5" />
                 <span>Navigating to Campus</span>
@@ -327,19 +327,19 @@ export const ContactView: React.FC<ContactViewProps> = ({ setActiveTab, onOpenAp
               >
                 <button
                   onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-slate-50 transition-colors"
+                  className="w-full p-4 sm:p-6 text-left flex items-center justify-between gap-3 sm:gap-4 hover:bg-slate-50 transition-colors"
                 >
-                  <span className="font-bold text-sm sm:text-base text-[#152540]">
+                  <span className="font-bold text-xs sm:text-base text-[#152540]">
                     {faq.q}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 text-slate-400 transition-transform ${
+                    className={`w-4 h-4 sm:w-5 sm:h-5 text-slate-400 transition-transform shrink-0 ${
                       isOpen ? 'transform rotate-180 text-[#bf923a]' : ''
                     }`}
                   />
                 </button>
                 {isOpen && (
-                  <div className="px-6 pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                  <div className="px-4 sm:px-6 pb-4 sm:pb-6 text-xs sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-3 sm:pt-4">
                     {faq.a}
                   </div>
                 )}

@@ -43,29 +43,29 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <>
       {/* 1. Top Bar: Dark blue shade (#081226), contact info (0325 6127831), 18 in yellow, clean & professional */}
-      <div className="bg-[#081226] text-slate-200 border-b border-slate-800 text-xs py-2 px-4 sm:px-8 transition-colors">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
+      <div className="bg-[#081226] text-slate-200 border-b border-slate-800 text-xs py-2 px-3 sm:px-8 transition-colors w-full">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
             {/* Admissions 2025-2026: Yellow applied to roughly half */}
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/10 text-[11px] font-semibold border border-white/15">
+            <span className="inline-flex items-center gap-1 px-2 sm:px-2.5 py-0.5 rounded-full bg-white/10 text-[10px] sm:text-[11px] font-semibold border border-white/15 shrink-0">
               <span className="text-[#f59e0b]">Admissions</span>
               <span className="text-white">2025–2026</span>
             </span>
             <span aria-hidden="true" className="text-slate-600 hidden sm:inline">·</span>
-            <span className="text-slate-300 hidden sm:inline font-medium">Simly Dam Road Campus, Islamabad</span>
-            <span aria-hidden="true" className="text-slate-600 hidden sm:inline">·</span>
+            <span className="text-slate-300 hidden md:inline font-medium truncate">Simly Dam Road Campus, Islamabad</span>
+            <span aria-hidden="true" className="text-slate-600 hidden md:inline">·</span>
             {/* The number 18 in yellow and slightly larger, rest in white */}
-            <span className="hidden sm:inline-flex items-center gap-1">
+            <span className="hidden sm:inline-flex items-center gap-1 shrink-0">
               <span className="text-[#f59e0b] font-bold text-sm">18</span>
               <span className="text-white font-medium">Years of Excellence</span>
             </span>
           </div>
 
-          <div className="flex items-center gap-4 text-xs">
+          <div className="flex items-center gap-3 sm:gap-4 text-xs shrink-0">
             {/* Phone Number: 0325 6127831 prominently shown */}
             <a
               href={`tel:${SCHOOL_INFO.phone}`}
-              className="flex items-center gap-1.5 hover:text-white transition-colors font-semibold text-slate-100"
+              className="flex items-center gap-1.5 hover:text-white transition-colors font-semibold text-slate-100 text-[11px] sm:text-xs"
             >
               <Phone className="w-3.5 h-3.5 text-[#f59e0b]" />
               <span>{SCHOOL_INFO.phone}</span>
@@ -86,27 +86,27 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* 2. Main Top Navigation Header */}
       <header
-        className={`sticky top-0 z-40 transition-all duration-300 ${
+        className={`sticky top-0 z-40 transition-all duration-300 w-full ${
           isScrolled
-            ? 'bg-white/98 backdrop-blur-md shadow-md border-b border-slate-200 py-3'
-            : 'bg-white border-b border-slate-100 py-4'
+            ? 'bg-white/98 backdrop-blur-md shadow-md border-b border-slate-200 py-2.5 sm:py-3'
+            : 'bg-white border-b border-slate-100 py-3 sm:py-4'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between gap-6">
+        <div className="max-w-7xl mx-auto px-3 sm:px-8 flex items-center justify-between gap-3 sm:gap-6">
           {/* Logo Section: Strong highlighted "P" logo + Prominent PEARL HILLIAN + Lighter vibrant blue subtitle */}
           <button
             onClick={() => handleNavClick('home')}
-            className="flex items-center gap-3.5 text-left focus:outline-none group shrink-0"
+            className="flex items-center gap-2 sm:gap-3.5 text-left focus:outline-none group min-w-0"
           >
             {/* Strongly highlighted "P" emblem */}
-            <div className="w-11 h-11 rounded-xl bg-[#081226] text-white flex items-center justify-center font-editorial text-2xl font-bold tracking-wider shadow-md group-hover:scale-105 transition-all border-2 border-[#0284c7] ring-2 ring-blue-50">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-[#081226] text-white flex items-center justify-center font-editorial text-xl sm:text-2xl font-bold tracking-wider shadow-md group-hover:scale-105 transition-all border-2 border-[#0284c7] ring-2 ring-blue-50 shrink-0">
               <span className="text-white drop-shadow-sm">P</span>
             </div>
-            <div className="flex flex-col">
-              <span className="font-editorial text-2xl md:text-[28px] font-bold text-[#081226] tracking-tight whitespace-nowrap leading-none">
+            <div className="flex flex-col min-w-0">
+              <span className="font-editorial text-xl sm:text-2xl md:text-[28px] font-bold text-[#081226] tracking-tight leading-none truncate">
                 PEARL HILLIAN
               </span>
-              <span className="text-[12px] font-bold uppercase tracking-wider text-[#0284c7] mt-1">
+              <span className="text-[10px] sm:text-[12px] font-bold uppercase tracking-wider text-[#0284c7] mt-0.5 sm:mt-1 truncate">
                 School System Islamabad
               </span>
             </div>
@@ -133,10 +133,10 @@ export const Header: React.FC<HeaderProps> = ({
           </nav>
 
           {/* Call to Action Button: Yellow "Apply for Admission" */}
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <button
               onClick={onOpenApplyModal}
-              className="px-6 py-2.5 text-xs sm:text-sm font-bold text-[#081226] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap flex items-center gap-1.5"
+              className="hidden sm:inline-flex px-4 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-[#081226] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap items-center gap-1.5"
             >
               <span>Apply for Admission</span>
               <ArrowUpRight className="w-4 h-4 text-[#081226]" />
@@ -145,7 +145,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Mobile Hamburger toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-slate-700 hover:text-[#081226] hover:bg-slate-100 rounded-lg focus:outline-none transition-colors"
+              className="lg:hidden p-2 text-slate-700 hover:text-[#081226] hover:bg-slate-100 rounded-lg focus:outline-none transition-colors shrink-0"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -155,7 +155,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-x-0 top-full bg-white border-b border-slate-200 shadow-2xl px-6 py-6 transition-all animate-fadeIn">
+          <div className="lg:hidden fixed inset-x-0 top-full bg-white border-b border-slate-200 shadow-2xl px-5 py-6 transition-all animate-fadeIn max-h-[calc(100vh-80px)] overflow-y-auto w-full">
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <button

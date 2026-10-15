@@ -18,7 +18,7 @@ export default function App() {
   const [isFeeModalOpen, setIsFeeModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#faf8f4] text-slate-800 font-sans selection:bg-[#152540] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#faf8f4] text-slate-800 font-sans selection:bg-[#152540] selection:text-white w-full overflow-x-hidden">
       {/* 3-Zone Header Contract & Top Info Ribbon */}
       <Header
         activeTab={activeTab}
@@ -27,7 +27,7 @@ export default function App() {
       />
 
       {/* Main View Router */}
-      <main className="flex-1">
+      <main className="flex-1 w-full overflow-x-hidden">
         {activeTab === 'home' && (
           <HomeView
             setActiveTab={setActiveTab}

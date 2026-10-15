@@ -17,28 +17,28 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
   };
 
   return (
-    <footer className="bg-[#0b1329] text-slate-300 border-t border-slate-800">
+    <footer className="bg-[#0b1329] text-slate-300 border-t border-slate-800 w-full overflow-x-hidden">
       {/* Upper CTA Banner with Dark Blue & Yellow Action */}
-      <div className="border-b border-slate-800 py-14 px-4 sm:px-8 bg-gradient-to-r from-[#0b1329] via-[#101b38] to-[#0b1329]">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <div className="border-b border-slate-800 py-10 sm:py-14 px-4 sm:px-8 bg-gradient-to-r from-[#0b1329] via-[#101b38] to-[#0b1329] w-full">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8">
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#f59e0b] uppercase mb-2">
-              <Award className="w-4 h-4 text-[#f59e0b]" />
+              <Award className="w-4 h-4 text-[#f59e0b] shrink-0" />
               <span>Admissions Open · Academic Session {SCHOOL_INFO.academicSession}</span>
             </div>
             <h3 className="font-editorial text-2xl sm:text-4xl font-bold text-white leading-tight">
               Secure Your Child’s Seat at Pearl Hillian School System
             </h3>
-            <p className="text-slate-300 text-sm sm:text-base mt-2 max-w-xl leading-relaxed">
+            <p className="text-slate-300 text-xs sm:text-base mt-2 max-w-xl leading-relaxed">
               Personalized mentorship, authentic Montessori foundations, and distinguished FBISE Board performance on Simly Dam Road, Islamabad.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3.5 shrink-0">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto shrink-0">
             {/* Button in exact client-requested yellow */}
             <button
               onClick={onOpenApplyModal}
-              className="px-7 py-3.5 text-xs sm:text-sm font-bold text-[#0b1329] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
+              className="w-full sm:w-auto px-6 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-bold text-[#0b1329] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 text-center"
             >
               Apply for Admission
             </button>
@@ -46,7 +46,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenApplyModal }
               href={`https://wa.me/${SCHOOL_INFO.whatsappRaw}?text=${encodeURIComponent('Hello Pearl Hillian Admissions Team, I would like to book a campus tour.')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3.5 text-xs sm:text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-full transition-all flex items-center gap-2 shadow-lg hover:scale-105 active:scale-95"
+              className="w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-full transition-all flex items-center justify-center gap-2 shadow-lg hover:scale-105 active:scale-95 text-center"
             >
               <MessageCircle className="w-4 h-4" />
               <span>WhatsApp Inquiries</span>

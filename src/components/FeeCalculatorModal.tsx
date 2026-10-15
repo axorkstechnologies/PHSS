@@ -41,29 +41,29 @@ export const FeeCalculatorModal: React.FC<FeeCalculatorModalProps> = ({
   const oneTimeAdmissionRegistration = hasAdmissionFee ? 18000 : 0;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#0b1329]/80 backdrop-blur-sm animate-fadeIn">
-      <div className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden max-h-[92vh] flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-6 bg-[#0b1329]/80 backdrop-blur-sm animate-fadeIn">
+      <div className="relative w-full max-w-xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-200 overflow-hidden max-h-[94vh] flex flex-col">
         {/* Header */}
-        <div className="bg-[#0b1329] text-white px-8 py-6 flex items-center justify-between border-b border-slate-800">
+        <div className="bg-[#0b1329] text-white px-5 sm:px-8 py-4 sm:py-6 flex items-center justify-between border-b border-slate-800">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-[#f59e0b] border border-white/10">
+            <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-[#f59e0b] border border-white/10 shrink-0">
               <Calculator className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-editorial text-2xl font-bold">Tuition &amp; Fee Estimator</h3>
-              <p className="text-xs text-slate-300">Session 2025–2026 · Simly Dam Road Campus</p>
+              <h3 className="font-editorial text-xl sm:text-2xl font-bold">Tuition &amp; Fee Estimator</h3>
+              <p className="text-[11px] sm:text-xs text-slate-300">Session 2025–2026 · Simly Dam Road Campus</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 text-slate-400 hover:text-white rounded-full hover:bg-white/10 transition-colors"
+            className="p-2 text-slate-400 hover:text-white rounded-full hover:bg-white/10 transition-colors shrink-0"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Content */}
-        <div className="p-8 overflow-y-auto space-y-6 text-sm text-slate-700">
+        <div className="p-4 sm:p-8 overflow-y-auto space-y-5 sm:space-y-6 text-sm text-slate-700">
           {/* Tier Selection */}
           <div>
             <label className="block font-bold text-slate-800 mb-2.5">Select Academic Grade Level</label>

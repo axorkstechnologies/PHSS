@@ -33,12 +33,12 @@ export const HomeView: React.FC<HomeViewProps> = ({
   const currentProgram = ACADEMIC_PROGRAMS[activeProgramIndex];
 
   return (
-    <div className="space-y-20 md:space-y-28 pb-24 bg-white">
+    <div className="space-y-16 sm:space-y-20 md:space-y-28 pb-20 sm:pb-24 bg-white w-full overflow-x-hidden">
 
       {/* ═══════════════════════════════════════════════════════════════
           HERO SECTION — Light theme with faded school building
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative min-h-[80vh] lg:min-h-[85vh] flex items-center overflow-hidden bg-slate-50">
+      <section className="relative min-h-[75vh] sm:min-h-[80vh] lg:min-h-[85vh] flex items-center overflow-hidden bg-slate-50 w-full">
         {/* Background: Original school building, nicely faded into light theme */}
         <div className="absolute inset-0 z-0">
           <img
@@ -53,31 +53,31 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-16 sm:py-20 lg:py-28 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-20 lg:py-28 w-full">
           <div className="max-w-2xl lg:max-w-3xl">
 
             {/* "18" badge: yellow number, rest clean */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-sm border border-slate-200 text-xs sm:text-sm mb-6 shadow-sm">
-              <span className="text-[#f59e0b] font-bold text-base">18</span>
-              <span className="text-[#081226] font-medium">Years of Excellence · Simly Dam Road, Islamabad</span>
+            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-sm border border-slate-200 text-xs sm:text-sm mb-4 sm:mb-6 shadow-sm max-w-full">
+              <span className="text-[#f59e0b] font-bold text-sm sm:text-base shrink-0">18</span>
+              <span className="text-[#081226] font-medium truncate">Years of Excellence · Simly Dam Road, Islamabad</span>
             </div>
 
             {/* Main Headline — short and powerful */}
-            <h1 className="font-editorial text-4xl sm:text-5xl lg:text-6xl xl:text-[68px] font-bold text-[#081226] tracking-tight leading-[1.08] text-balance mb-5">
+            <h1 className="font-editorial text-3xl sm:text-5xl lg:text-6xl xl:text-[68px] font-bold text-[#081226] tracking-tight leading-[1.12] sm:leading-[1.08] text-balance mb-4 sm:mb-5">
               Where Every Child's <span className="text-[#0284c7]">Potential</span> Becomes Their <span className="text-[#f59e0b]">Reality</span>
             </h1>
 
             {/* Exact client paragraph */}
-            <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-normal max-w-2xl mb-8">
-              <span className="text-[#f59e0b] font-bold text-lg">18</span> years of nurturing bright children along Simly Dam Road. Where FBISE board unites with certified academic, social and moral growth of students.
+            <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed font-normal max-w-2xl mb-6 sm:mb-8">
+              <span className="text-[#f59e0b] font-bold text-base sm:text-lg">18</span> years of nurturing bright children along Simly Dam Road. Where FBISE board unites with certified academic, social and moral growth of students.
             </p>
 
-            {/* Only TWO buttons */}
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+            {/* Only TWO buttons — full width on mobile, auto on sm+ */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
               {/* Explore Admissions → Yellow */}
               <button
                 onClick={() => setActiveTab('admissions')}
-                className="px-7 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-[#081226] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-[#081226] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
               >
                 <span>Explore Admissions</span>
                 <ArrowRight className="w-4 h-4 text-[#081226]" />
@@ -86,7 +86,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               {/* Discover Our School → White / Light */}
               <button
                 onClick={() => setActiveTab('about')}
-                className="px-7 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-[#081226] bg-white hover:bg-slate-50 border border-slate-200 rounded-full transition-all shadow-sm hover:shadow-md flex items-center gap-2 hover:scale-105 active:scale-95"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-[#081226] bg-white hover:bg-slate-50 border border-slate-200 rounded-full transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2 hover:scale-105 active:scale-95"
               >
                 <span>Discover Our School</span>
                 <ChevronRight className="w-4 h-4 text-slate-500" />
@@ -94,7 +94,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </div>
 
             {/* Admissions status ribbon */}
-            <div className="mt-10 pt-5 border-t border-slate-200 flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-slate-500">
+            <div className="mt-8 sm:mt-10 pt-4 sm:pt-5 border-t border-slate-200 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 text-xs sm:text-sm text-slate-500">
               <div className="flex items-center gap-2.5">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -122,9 +122,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* ═══════════════════════════════════════════════════════════════
           STATS STRIP — Key Pillars (18 in yellow)
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8 -mt-12 sm:-mt-14 relative z-20">
-        <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-lg">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 -mt-8 sm:-mt-14 relative z-20 w-full">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-10 border border-slate-200 shadow-lg">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
             {/* Stat 1: 18 in yellow & larger */}
             <div className="text-center">
               <div className="font-editorial text-3xl sm:text-5xl font-bold tracking-tight">
@@ -331,16 +331,16 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 </div>
               </div>
 
-              <div className="pt-4 sm:pt-6 border-t border-slate-100 flex flex-wrap items-center gap-3">
+              <div className="pt-4 sm:pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <button
                   onClick={onOpenApplyModal}
-                  className="px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-[#081226] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-md hover:shadow-lg"
+                  className="w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-[#081226] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-md hover:shadow-lg text-center"
                 >
                   Apply for Admission
                 </button>
                 <button
                   onClick={() => setActiveTab('academics')}
-                  className="px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors"
+                  className="w-full sm:w-auto px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors text-center"
                 >
                   Read Full Curriculum →
                 </button>

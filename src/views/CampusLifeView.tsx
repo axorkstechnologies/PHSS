@@ -26,20 +26,20 @@ export const CampusLifeView: React.FC<CampusLifeViewProps> = ({ setActiveTab, on
     : GALLERY_ITEMS.filter((item) => item.category === selectedCategory);
 
   return (
-    <div className="space-y-24 md:space-y-32 pb-24">
+    <div className="space-y-16 sm:space-y-24 md:space-y-32 pb-20 sm:pb-24 w-full overflow-x-hidden">
       {/* Editorial Header */}
-      <section className="bg-gradient-to-br from-[#152540] via-[#1b3054] to-[#213c68] text-white py-20 lg:py-28 px-4 sm:px-8 border-b border-white/10 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 text-[#f2dc9e] text-xs font-bold uppercase tracking-wider border border-white/20">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Life at Simly Dam Road Campus · Islamabad</span>
+      <section className="bg-gradient-to-br from-[#152540] via-[#1b3054] to-[#213c68] text-white py-14 sm:py-20 lg:py-28 px-4 sm:px-8 border-b border-white/10 relative overflow-hidden w-full">
+        <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 relative z-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 text-[#f2dc9e] text-xs font-bold uppercase tracking-wider border border-white/20 max-w-full">
+            <Sparkles className="w-3.5 h-3.5 shrink-0" />
+            <span className="truncate">Life at Simly Dam Road Campus · Islamabad</span>
           </div>
 
-          <h1 className="font-editorial text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+          <h1 className="font-editorial text-3xl sm:text-5xl lg:text-7xl font-bold leading-tight tracking-tight">
             Vibrant Community, Inspiring Spaces &amp; Enduring Memories
           </h1>
 
-          <p className="text-slate-200 text-base sm:text-xl leading-relaxed max-w-2xl mx-auto font-normal">
+          <p className="text-slate-200 text-sm sm:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto font-normal">
             Step inside our light-filled classrooms, athletic fields, and research sanctuaries designed to foster joy, camaraderie, and boundless intellectual exploration.
           </p>
         </div>
@@ -47,12 +47,12 @@ export const CampusLifeView: React.FC<CampusLifeViewProps> = ({ setActiveTab, on
 
       {/* Gallery Filter Tabs */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-8 sm:mb-12">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-5 py-2.5 text-xs sm:text-sm font-bold rounded-full transition-all ${
+              className={`px-3.5 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold rounded-full transition-all ${
                 selectedCategory === cat.id
                   ? 'bg-[#152540] text-white shadow-md'
                   : 'bg-white text-slate-700 border border-[#ebe3d5] hover:border-slate-300 hover:bg-slate-50'
@@ -161,36 +161,36 @@ export const CampusLifeView: React.FC<CampusLifeViewProps> = ({ setActiveTab, on
       {activeLightboxItem && (
         <div
           onClick={() => setActiveLightboxItem(null)}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-fadeIn"
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative max-w-4xl w-full bg-[#152540] text-white rounded-3xl overflow-hidden shadow-2xl border border-white/20"
+            className="relative max-w-4xl w-full bg-[#152540] text-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/20"
           >
             <button
               onClick={() => setActiveLightboxItem(null)}
-              className="absolute top-4 right-4 z-10 p-2.5 text-white/80 hover:text-white bg-black/40 hover:bg-black/60 rounded-full transition-colors"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 p-2 text-white/80 hover:text-white bg-black/40 hover:bg-black/60 rounded-full transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <div className="max-h-[70vh] overflow-hidden flex items-center justify-center bg-black/50">
+            <div className="max-h-[60vh] sm:max-h-[70vh] overflow-hidden flex items-center justify-center bg-black/50">
               <img
                 src={activeLightboxItem.image}
                 alt={activeLightboxItem.title}
                 referrerPolicy="no-referrer"
-                className="max-h-[70vh] w-auto object-contain"
+                className="max-h-[60vh] sm:max-h-[70vh] w-auto object-contain"
               />
             </div>
 
-            <div className="p-8">
+            <div className="p-5 sm:p-8">
               <div className="text-xs uppercase tracking-wider text-[#f2dc9e] font-bold">
                 {activeLightboxItem.categoryLabel}
               </div>
-              <h3 className="font-editorial text-3xl font-bold mt-1 text-white">
+              <h3 className="font-editorial text-2xl sm:text-3xl font-bold mt-1 text-white">
                 {activeLightboxItem.title}
               </h3>
-              <p className="text-slate-200 text-sm sm:text-base mt-2 leading-relaxed">
+              <p className="text-slate-200 text-xs sm:text-base mt-2 leading-relaxed">
                 {activeLightboxItem.caption}
               </p>
             </div>

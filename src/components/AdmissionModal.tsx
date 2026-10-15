@@ -64,22 +64,22 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#0b1329]/80 backdrop-blur-sm animate-fadeIn">
-      <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden max-h-[92vh] flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-6 bg-[#0b1329]/80 backdrop-blur-sm animate-fadeIn">
+      <div className="relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-200 overflow-hidden max-h-[94vh] flex flex-col">
         {/* Modal Header: Deep Blackish Navy */}
-        <div className="bg-[#0b1329] text-white px-8 py-6 flex items-center justify-between border-b border-slate-800">
+        <div className="bg-[#0b1329] text-white px-5 sm:px-8 py-4 sm:py-6 flex items-center justify-between border-b border-slate-800">
           <div>
-            <div className="flex items-center gap-2 text-xs font-bold tracking-wider text-[#f59e0b] uppercase">
-              <Building2 className="w-3.5 h-3.5" />
+            <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold tracking-wider text-[#f59e0b] uppercase">
+              <Building2 className="w-3.5 h-3.5 shrink-0" />
               <span>Simly Dam Road Campus · Admissions 2025–26</span>
             </div>
-            <h2 className="font-editorial text-2xl sm:text-3xl font-bold mt-1">
+            <h2 className="font-editorial text-xl sm:text-3xl font-bold mt-1">
               Online Admission Application
             </h2>
           </div>
           <button
             onClick={resetForm}
-            className="p-2 text-slate-400 hover:text-white rounded-full hover:bg-white/10 transition-colors"
+            className="p-2 text-slate-400 hover:text-white rounded-full hover:bg-white/10 transition-colors shrink-0"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -87,7 +87,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({ isOpen, onClose 
         </div>
 
         {/* Modal Body */}
-        <div className="p-8 overflow-y-auto">
+        <div className="p-4 sm:p-8 overflow-y-auto">
           {submittedCode ? (
             <div className="text-center py-8">
               <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-4 border border-emerald-200">

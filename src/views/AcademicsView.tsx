@@ -12,20 +12,20 @@ export const AcademicsView: React.FC<AcademicsViewProps> = ({ setActiveTab, onOp
   const [selectedDivision, setSelectedDivision] = useState<string>('montessori');
 
   return (
-    <div className="space-y-24 md:space-y-32 pb-24">
+    <div className="space-y-16 sm:space-y-24 md:space-y-32 pb-20 sm:pb-24 w-full overflow-x-hidden">
       {/* Editorial Header */}
-      <section className="bg-gradient-to-br from-[#152540] via-[#1b3054] to-[#213c68] text-white py-20 lg:py-28 px-4 sm:px-8 border-b border-white/10 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 text-[#f2dc9e] text-xs font-bold uppercase tracking-wider border border-white/20">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Academic Curriculum &amp; Montessori · Session {SCHOOL_INFO.academicSession}</span>
+      <section className="bg-gradient-to-br from-[#152540] via-[#1b3054] to-[#213c68] text-white py-14 sm:py-20 lg:py-28 px-4 sm:px-8 border-b border-white/10 relative overflow-hidden w-full">
+        <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 relative z-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 text-[#f2dc9e] text-xs font-bold uppercase tracking-wider border border-white/20 max-w-full">
+            <Sparkles className="w-3.5 h-3.5 shrink-0" />
+            <span className="truncate">Academic Curriculum &amp; Montessori · Session {SCHOOL_INFO.academicSession}</span>
           </div>
 
-          <h1 className="font-editorial text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+          <h1 className="font-editorial text-3xl sm:text-5xl lg:text-7xl font-bold leading-tight tracking-tight">
             Scholarly Depth from Sensory Early Years to Board Distinctions
           </h1>
 
-          <p className="text-slate-200 text-base sm:text-xl leading-relaxed max-w-2xl mx-auto font-normal">
+          <p className="text-slate-200 text-sm sm:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto font-normal">
             A continuous, intentional intellectual journey combining authentic Maria Montessori sensorial methods, British Cambridge foundational benchmarks, and Federal Board (FBISE) examination distinction.
           </p>
         </div>
@@ -33,7 +33,7 @@ export const AcademicsView: React.FC<AcademicsViewProps> = ({ setActiveTab, onOp
 
       {/* Division Navigation Filter */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="flex flex-wrap items-center justify-center gap-2.5 p-2 bg-white rounded-full max-w-3xl mx-auto border border-[#ebe3d5] shadow-sm">
+        <div className="flex flex-wrap items-center justify-center gap-2 p-1.5 sm:p-2 bg-white rounded-2xl sm:rounded-full max-w-3xl mx-auto border border-[#ebe3d5] shadow-sm">
           {[
             { id: 'montessori', label: 'Montessori Wing (2.5–5.5y)' },
             { id: 'primary', label: 'Primary School (Grades 1–5)' },
@@ -43,7 +43,7 @@ export const AcademicsView: React.FC<AcademicsViewProps> = ({ setActiveTab, onOp
             <button
               key={div.id}
               onClick={() => setSelectedDivision(div.id)}
-              className={`px-5 py-2.5 text-xs sm:text-sm font-bold rounded-full transition-all ${
+              className={`w-full sm:w-auto px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold rounded-xl sm:rounded-full transition-all text-center ${
                 selectedDivision === div.id
                   ? 'bg-[#152540] text-white shadow-md'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
@@ -56,7 +56,7 @@ export const AcademicsView: React.FC<AcademicsViewProps> = ({ setActiveTab, onOp
       </section>
 
       {/* Deep-Dive into the 4 Divisions */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12 sm:space-y-16">
         {ACADEMIC_PROGRAMS.map((prog, index) => {
           const isSelected = selectedDivision === prog.id;
           const isEven = index % 2 === 0;
@@ -65,43 +65,43 @@ export const AcademicsView: React.FC<AcademicsViewProps> = ({ setActiveTab, onOp
             <div
               key={prog.id}
               id={prog.id}
-              className={`rounded-3xl border transition-all p-8 sm:p-12 ${
+              className={`rounded-2xl sm:rounded-3xl border transition-all p-5 sm:p-12 ${
                 isSelected
                   ? 'bg-white border-[#152540]/40 shadow-2xl ring-2 ring-[#152540]/10'
                   : 'bg-white/80 border-[#ebe3d5] shadow-sm hover:shadow-md'
               }`}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-14 items-center">
                 {/* Visual */}
                 <div className={`lg:col-span-5 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
-                  <div className="rounded-3xl overflow-hidden aspect-[4/3] shadow-lg relative border-4 border-white">
+                  <div className="rounded-2xl sm:rounded-3xl overflow-hidden aspect-[4/3] shadow-lg relative border-4 border-white">
                     <img
                       src={prog.image}
                       alt={prog.title}
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute top-4 left-4 px-3.5 py-1.5 bg-[#152540]/85 backdrop-blur-md rounded-full text-white text-xs font-bold uppercase tracking-wider">
+                    <div className="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 py-1 bg-[#152540]/85 backdrop-blur-md rounded-full text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider">
                       {prog.level}
                     </div>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className={`lg:col-span-7 space-y-5 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
+                <div className={`lg:col-span-7 space-y-4 sm:space-y-5 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-[#bf923a] text-xs font-bold uppercase tracking-wider border border-amber-200">
                     <span>{prog.ageGroup}</span>
                   </div>
 
-                  <h2 className="font-editorial text-3xl sm:text-4xl font-bold text-[#152540]">
+                  <h2 className="font-editorial text-2xl sm:text-4xl font-bold text-[#152540]">
                     {prog.title}
                   </h2>
 
-                  <p className="text-[#bf923a] text-sm sm:text-base font-semibold">
+                  <p className="text-[#bf923a] text-xs sm:text-base font-semibold">
                     {prog.subtitle}
                   </p>
 
-                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                  <p className="text-slate-600 text-xs sm:text-base leading-relaxed">
                     {prog.description}
                   </p>
 
@@ -110,7 +110,7 @@ export const AcademicsView: React.FC<AcademicsViewProps> = ({ setActiveTab, onOp
                       <Sparkles className="w-3.5 h-3.5 text-[#bf923a]" />
                       <span>Core Academic Milestones</span>
                     </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
                       {prog.features.map((feat, fIdx) => (
                         <div key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 font-medium">
                           <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -120,10 +120,10 @@ export const AcademicsView: React.FC<AcademicsViewProps> = ({ setActiveTab, onOp
                     </div>
                   </div>
 
-                  <div className="pt-4 flex flex-wrap items-center gap-3">
+                  <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                     <button
                       onClick={onOpenApplyModal}
-                      className="px-6 py-3 text-xs sm:text-sm font-bold text-white bg-[#152540] hover:bg-[#213c68] rounded-full transition-all shadow-md hover:shadow-lg"
+                      className="w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-white bg-[#152540] hover:bg-[#213c68] rounded-full transition-all shadow-md hover:shadow-lg text-center"
                     >
                       Apply for {prog.title.split('(')[0]}
                     </button>
@@ -131,7 +131,7 @@ export const AcademicsView: React.FC<AcademicsViewProps> = ({ setActiveTab, onOp
                       href={`https://wa.me/${SCHOOL_INFO.whatsappRaw}?text=${encodeURIComponent(`Hello, I would like to inquire regarding the curriculum for ${prog.title}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-5 py-3 text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 rounded-full transition-colors flex items-center gap-2 border border-emerald-200"
+                      className="w-full sm:w-auto px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 rounded-full transition-colors flex items-center justify-center gap-2 border border-emerald-200 text-center"
                     >
                       <MessageCircle className="w-4 h-4 text-emerald-600" />
                       <span>Inquire via WhatsApp</span>

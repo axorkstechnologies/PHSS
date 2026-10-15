@@ -10,20 +10,20 @@ interface AboutViewProps {
 
 export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab, onOpenApplyModal }) => {
   return (
-    <div className="space-y-24 md:space-y-32 pb-24">
+    <div className="space-y-16 sm:space-y-24 md:space-y-32 pb-20 sm:pb-24 w-full overflow-x-hidden">
       {/* Editorial Header */}
-      <section className="bg-gradient-to-br from-[#152540] via-[#1b3054] to-[#213c68] text-white py-20 lg:py-28 px-4 sm:px-8 border-b border-white/10 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 text-[#f2dc9e] text-xs font-bold uppercase tracking-wider border border-white/20">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Our Institutional Heritage · Est. 2008</span>
+      <section className="bg-gradient-to-br from-[#152540] via-[#1b3054] to-[#213c68] text-white py-14 sm:py-20 lg:py-28 px-4 sm:px-8 border-b border-white/10 relative overflow-hidden w-full">
+        <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 relative z-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 text-[#f2dc9e] text-xs font-bold uppercase tracking-wider border border-white/20 max-w-full">
+            <Sparkles className="w-3.5 h-3.5 shrink-0" />
+            <span className="truncate">Our Institutional Heritage · Est. 2008</span>
           </div>
 
-          <h1 className="font-editorial text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+          <h1 className="font-editorial text-3xl sm:text-5xl lg:text-7xl font-bold leading-tight tracking-tight">
             Eighteen Years of Character, Curiosity &amp; Distinction
           </h1>
 
-          <p className="text-slate-200 text-base sm:text-xl leading-relaxed max-w-2xl mx-auto font-normal">
+          <p className="text-slate-200 text-sm sm:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto font-normal">
             Founded with an enduring commitment to academic rigor and moral leadership in Islamabad, Pearl Hillian School System nurtures visionary young minds grounded in compassion and intellectual fortitude.
           </p>
         </div>
@@ -146,18 +146,18 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab, onOpenApplyM
           </h2>
         </div>
 
-        <div className="space-y-8 relative before:absolute before:inset-0 before:left-5 before:w-0.5 before:bg-[#ebe3d5]">
+        <div className="space-y-6 sm:space-y-8 relative before:absolute before:inset-0 before:left-3.5 sm:before:left-5 before:w-0.5 before:bg-[#ebe3d5]">
           {MILESTONES.map((m, idx) => (
-            <div key={idx} className="relative flex items-start gap-6 pl-12">
-              <div className="absolute left-3 w-6 h-6 rounded-full bg-[#152540] border-4 border-white shadow-md -translate-x-1/2 mt-1" />
-              <div className="bg-white p-7 rounded-3xl border border-[#ebe3d5] shadow-sm hover:shadow-md transition-shadow w-full">
-                <div className="font-editorial text-base font-bold text-[#bf923a] uppercase">
+            <div key={idx} className="relative flex items-start gap-3 sm:gap-6 pl-8 sm:pl-12">
+              <div className="absolute left-3.5 sm:left-5 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#152540] border-4 border-white shadow-md -translate-x-1/2 mt-1" />
+              <div className="bg-white p-5 sm:p-7 rounded-2xl sm:rounded-3xl border border-[#ebe3d5] shadow-sm hover:shadow-md transition-shadow w-full">
+                <div className="font-editorial text-sm sm:text-base font-bold text-[#bf923a] uppercase">
                   {m.year}
                 </div>
-                <h3 className="font-editorial text-2xl font-bold text-[#152540] mt-1">
+                <h3 className="font-editorial text-xl sm:text-2xl font-bold text-[#152540] mt-1">
                   {m.title}
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed mt-2 font-normal">
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mt-2 font-normal">
                   {m.description}
                 </p>
               </div>
@@ -168,31 +168,31 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab, onOpenApplyM
 
       {/* Reassuring Pastoral Care & Safety */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="bg-gradient-to-br from-[#152540] to-[#213c68] text-white rounded-3xl p-8 sm:p-14 shadow-2xl border border-white/10">
+        <div className="bg-gradient-to-br from-[#152540] to-[#213c68] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-14 shadow-2xl border border-white/10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-[#f2dc9e] text-xs font-bold uppercase tracking-wider border border-white/20 mb-3">
                 <ShieldCheck className="w-3.5 h-3.5" />
                 <span>Safety &amp; Well-being First</span>
               </div>
-              <h2 className="font-editorial text-3xl sm:text-4xl font-bold text-white leading-tight">
+              <h2 className="font-editorial text-2xl sm:text-4xl font-bold text-white leading-tight">
                 Fortified Campus Security &amp; Loving Pastoral Safeguards
               </h2>
-              <p className="text-slate-200 text-sm sm:text-base mt-3 leading-relaxed font-normal">
+              <p className="text-slate-200 text-xs sm:text-base mt-3 leading-relaxed font-normal">
                 We understand that peace of mind is essential for parents. Simly Dam Road Campus enforces multi-tier security surveillance, dedicated perimeter defense, and rapid medical response protocols.
               </p>
             </div>
 
             <div className="space-y-3.5 text-xs sm:text-sm text-slate-200 font-medium">
-              <div className="flex items-center gap-3.5 p-4 bg-white/10 rounded-2xl border border-white/15">
+              <div className="flex items-center gap-3.5 p-3.5 sm:p-4 bg-white/10 rounded-2xl border border-white/15">
                 <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
                 <span>24/7 high-definition CCTV coverage across all entrance gates, hallways, and grounds</span>
               </div>
-              <div className="flex items-center gap-3.5 p-4 bg-white/10 rounded-2xl border border-white/15">
+              <div className="flex items-center gap-3.5 p-3.5 sm:p-4 bg-white/10 rounded-2xl border border-white/15">
                 <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
                 <span>Controlled visitor clearance &amp; biometric parent pickup authorisations</span>
               </div>
-              <div className="flex items-center gap-3.5 p-4 bg-white/10 rounded-2xl border border-white/15">
+              <div className="flex items-center gap-3.5 p-3.5 sm:p-4 bg-white/10 rounded-2xl border border-white/15">
                 <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
                 <span>On-campus first-aid infirmary with certified nurse &amp; emergency doctor on call</span>
               </div>
@@ -202,13 +202,13 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab, onOpenApplyM
       </section>
 
       {/* Bottom CTA */}
-      <div className="text-center pt-4">
+      <div className="text-center pt-4 px-4">
         <button
           onClick={onOpenApplyModal}
-          className="px-8 py-4 text-sm font-bold text-white bg-[#152540] hover:bg-[#213c68] rounded-full transition-all shadow-lg hover:shadow-xl inline-flex items-center gap-2"
+          className="w-full sm:w-auto max-w-md px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-bold text-white bg-[#152540] hover:bg-[#213c68] rounded-full transition-all shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2"
         >
           <span>Book a Personalized Campus Walk-Through</span>
-          <ArrowRight className="w-4 h-4 text-[#eacd72]" />
+          <ArrowRight className="w-4 h-4 text-[#eacd72] shrink-0" />
         </button>
       </div>
     </div>
