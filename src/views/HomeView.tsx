@@ -46,9 +46,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
             alt="Pearl Hillian School System Campus Building"
             className="w-full h-full object-cover object-[center_right] sm:object-right"
           />
-          {/* Subtle directional gradient on left for text readability, keeping the building and sky on right clear and visible */}
-          <div className="absolute inset-y-0 left-0 w-full sm:w-[65%] lg:w-[52%] bg-gradient-to-r from-white via-white/90 to-transparent pointer-events-none" />
-          <div className="absolute inset-0 bg-white/40 sm:hidden pointer-events-none" />
+          {/* Soft, light white and very light blue gradient/overlay only on the left side behind text and buttons */}
+          <div className="absolute inset-y-0 left-0 w-full sm:w-[75%] md:w-[68%] lg:w-[58%] xl:w-[54%] bg-gradient-to-r from-white via-white/95 via-[#f0f7ff]/90 to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-full sm:w-[55%] lg:w-[46%] bg-gradient-to-r from-white/90 via-sky-50/60 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-white/80 sm:hidden pointer-events-none" />
           <div className="absolute bottom-0 inset-x-0 h-16 sm:h-20 bg-gradient-to-t from-white via-white/40 to-transparent pointer-events-none" />
         </div>
 
@@ -59,7 +60,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             {/* "18" badge: yellow number, rest clean dark blue */}
             <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white/95 backdrop-blur-sm border border-slate-200 text-xs sm:text-sm mb-4 sm:mb-6 shadow-xs max-w-full">
               <span className="text-[#f59e0b] font-bold text-sm sm:text-base shrink-0">18</span>
-              <span className="text-[#0f2b5c] font-medium truncate">Years of Excellence · Simly Dam Road, Islamabad</span>
+              <span className="text-[#0f2b5c] font-semibold truncate">Years of Excellence · Simly Dam Road, Islamabad</span>
             </div>
 
             {/* Main Headline — Dark Blue */}
@@ -68,7 +69,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </h1>
 
             {/* Exact client paragraph */}
-            <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed font-normal max-w-xl mb-6 sm:mb-8">
+            <p className="text-slate-700 text-sm sm:text-base lg:text-lg leading-relaxed font-normal max-w-xl mb-6 sm:mb-8">
               <span className="text-[#f59e0b] font-bold text-base sm:text-lg">18</span> years of nurturing bright children along Simly Dam Road. Where FBISE board unites with certified academic, social and moral growth of students.
             </p>
 
