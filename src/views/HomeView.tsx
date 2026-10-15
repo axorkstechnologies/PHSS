@@ -62,9 +62,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <span className="text-[#081226] font-medium truncate">Years of Excellence · Simly Dam Road, Islamabad</span>
             </div>
 
-            {/* Main Headline — short and powerful */}
-            <h1 className="font-editorial text-3xl sm:text-5xl lg:text-6xl xl:text-[68px] font-bold text-[#081226] tracking-tight leading-[1.12] sm:leading-[1.08] text-balance mb-4 sm:mb-5">
-              Where Every Child's <span className="text-[#0284c7]">Potential</span> Becomes Their <span className="text-[#f59e0b]">Reality</span>
+            {/* Main Headline */}
+            <h1 className="font-editorial text-3xl sm:text-5xl lg:text-6xl xl:text-[68px] font-bold text-[#081226] tracking-tight leading-[1.15] sm:leading-[1.08] text-balance mb-4 sm:mb-5">
+              Where Minds Blossom with <span className="text-[#0284c7]">Purpose</span>
             </h1>
 
             {/* Exact client paragraph */}
