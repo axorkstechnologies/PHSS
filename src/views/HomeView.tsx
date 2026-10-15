@@ -36,39 +36,39 @@ export const HomeView: React.FC<HomeViewProps> = ({
     <div className="space-y-16 sm:space-y-20 md:space-y-28 pb-20 sm:pb-24 bg-white w-full overflow-x-hidden">
 
       {/* ═══════════════════════════════════════════════════════════════
-          HERO SECTION — Light theme with faded school building
+          HERO SECTION — Natural School Campus with Clean Left Layout
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative min-h-[75vh] sm:min-h-[80vh] lg:min-h-[85vh] flex items-center overflow-hidden bg-slate-50 w-full">
-        {/* Background: Original school building, nicely faded into light theme */}
+      <section className="relative min-h-[72vh] sm:min-h-[78vh] lg:min-h-[84vh] flex items-center overflow-hidden bg-slate-100 w-full">
+        {/* Background: Original school building, crisp and visible with clear blue sky */}
         <div className="absolute inset-0 z-0">
           <img
             src={IMAGES.schoolBuilding}
             alt="Pearl Hillian School System Campus Building"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-[center_right] sm:object-right"
           />
-          {/* Light fade overlay — blends image with the light theme, no heavy dark overlay */}
-          <div className="absolute inset-0 bg-white/70" />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-white/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/40" />
+          {/* Subtle directional gradient on left for text readability, keeping the building and sky on right clear and visible */}
+          <div className="absolute inset-y-0 left-0 w-full sm:w-[65%] lg:w-[52%] bg-gradient-to-r from-white via-white/90 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-white/40 sm:hidden pointer-events-none" />
+          <div className="absolute bottom-0 inset-x-0 h-16 sm:h-20 bg-gradient-to-t from-white via-white/40 to-transparent pointer-events-none" />
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-20 lg:py-28 w-full">
-          <div className="max-w-2xl lg:max-w-3xl">
+        {/* Hero Content — Clean left-side arrangement */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16 lg:py-24 w-full">
+          <div className="max-w-xl lg:max-w-2xl text-left">
 
-            {/* "18" badge: yellow number, rest clean */}
-            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-sm border border-slate-200 text-xs sm:text-sm mb-4 sm:mb-6 shadow-sm max-w-full">
+            {/* "18" badge: yellow number, rest clean dark blue */}
+            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white/95 backdrop-blur-sm border border-slate-200 text-xs sm:text-sm mb-4 sm:mb-6 shadow-xs max-w-full">
               <span className="text-[#f59e0b] font-bold text-sm sm:text-base shrink-0">18</span>
-              <span className="text-[#081226] font-medium truncate">Years of Excellence · Simly Dam Road, Islamabad</span>
+              <span className="text-[#0f2b5c] font-medium truncate">Years of Excellence · Simly Dam Road, Islamabad</span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="font-editorial text-3xl sm:text-5xl lg:text-6xl xl:text-[68px] font-bold text-[#081226] tracking-tight leading-[1.15] sm:leading-[1.08] text-balance mb-4 sm:mb-5">
-              Where Minds Blossom with <span className="text-[#0284c7]">Purpose</span>
+            {/* Main Headline — Dark Blue */}
+            <h1 className="font-editorial text-3xl sm:text-5xl lg:text-6xl xl:text-[68px] font-bold text-[#0f2b5c] tracking-tight leading-[1.12] sm:leading-[1.08] text-balance mb-4 sm:mb-5">
+              Where Minds Blossom with Purpose
             </h1>
 
             {/* Exact client paragraph */}
-            <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed font-normal max-w-2xl mb-6 sm:mb-8">
+            <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed font-normal max-w-xl mb-6 sm:mb-8">
               <span className="text-[#f59e0b] font-bold text-base sm:text-lg">18</span> years of nurturing bright children along Simly Dam Road. Where FBISE board unites with certified academic, social and moral growth of students.
             </p>
 
@@ -77,41 +77,20 @@ export const HomeView: React.FC<HomeViewProps> = ({
               {/* Explore Admissions → Yellow */}
               <button
                 onClick={() => setActiveTab('admissions')}
-                className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-[#081226] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-[#0f2b5c] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
               >
                 <span>Explore Admissions</span>
-                <ArrowRight className="w-4 h-4 text-[#081226]" />
+                <ArrowRight className="w-4 h-4 text-[#0f2b5c]" />
               </button>
 
               {/* Discover Our School → White / Light */}
               <button
                 onClick={() => setActiveTab('about')}
-                className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-[#081226] bg-white hover:bg-slate-50 border border-slate-200 rounded-full transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2 hover:scale-105 active:scale-95"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-[#0f2b5c] bg-white hover:bg-slate-50 border border-slate-200 rounded-full transition-all shadow-xs hover:shadow-md flex items-center justify-center gap-2 hover:scale-105 active:scale-95"
               >
                 <span>Discover Our School</span>
                 <ChevronRight className="w-4 h-4 text-slate-500" />
               </button>
-            </div>
-
-            {/* Admissions status ribbon */}
-            <div className="mt-8 sm:mt-10 pt-4 sm:pt-5 border-t border-slate-200 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 text-xs sm:text-sm text-slate-500">
-              <div className="flex items-center gap-2.5">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
-                </span>
-                <span className="font-semibold">
-                  <span className="text-[#f59e0b]">Admissions</span> <span className="text-[#081226]">2025–2026 Open</span>
-                </span>
-              </div>
-              <span aria-hidden="true" className="text-slate-300 hidden sm:inline">|</span>
-              <a
-                href={`tel:${SCHOOL_INFO.phone}`}
-                className="hover:text-[#081226] transition-colors flex items-center gap-2 font-medium"
-              >
-                <Phone className="w-4 h-4 text-[#f59e0b]" />
-                <span>Admissions Desk: <strong className="text-[#081226]">{SCHOOL_INFO.phone}</strong></span>
-              </a>
             </div>
 
           </div>
@@ -122,16 +101,16 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* ═══════════════════════════════════════════════════════════════
           STATS STRIP — Key Pillars (18 in yellow)
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8 -mt-8 sm:-mt-14 relative z-20 w-full">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 -mt-6 sm:-mt-10 relative z-20 w-full">
         <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-10 border border-slate-200 shadow-lg">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
             {/* Stat 1: 18 in yellow & larger */}
             <div className="text-center">
               <div className="font-editorial text-3xl sm:text-5xl font-bold tracking-tight">
                 <span className="text-[#f59e0b] text-4xl sm:text-6xl">18</span>
-                <span className="text-[#081226]">+</span>
+                <span className="text-[#0f2b5c]">+</span>
               </div>
-              <div className="text-xs sm:text-sm font-bold text-[#081226] mt-1.5 uppercase tracking-wider">
+              <div className="text-xs sm:text-sm font-bold text-[#0f2b5c] mt-1.5 uppercase tracking-wider">
                 Years of Excellence
               </div>
               <div className="text-xs text-slate-500 mt-1 font-medium">
@@ -141,10 +120,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
             {/* Stat 2 */}
             <div className="text-center">
-              <div className="font-editorial text-3xl sm:text-5xl font-bold text-[#081226] tracking-tight">
+              <div className="font-editorial text-3xl sm:text-5xl font-bold text-[#0f2b5c] tracking-tight">
                 100%
               </div>
-              <div className="text-xs sm:text-sm font-bold text-[#081226] mt-1.5 uppercase tracking-wider">
+              <div className="text-xs sm:text-sm font-bold text-[#0f2b5c] mt-1.5 uppercase tracking-wider">
                 Board Pass Rate
               </div>
               <div className="text-xs text-slate-500 mt-1 font-medium">
@@ -154,10 +133,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
             {/* Stat 3 */}
             <div className="text-center">
-              <div className="font-editorial text-3xl sm:text-5xl font-bold text-[#081226] tracking-tight">
+              <div className="font-editorial text-3xl sm:text-5xl font-bold text-[#0f2b5c] tracking-tight">
                 14:1
               </div>
-              <div className="text-xs sm:text-sm font-bold text-[#081226] mt-1.5 uppercase tracking-wider">
+              <div className="text-xs sm:text-sm font-bold text-[#0f2b5c] mt-1.5 uppercase tracking-wider">
                 Student-Teacher Ratio
               </div>
               <div className="text-xs text-slate-500 mt-1 font-medium">
@@ -167,10 +146,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
             {/* Stat 4 */}
             <div className="text-center">
-              <div className="font-editorial text-3xl sm:text-5xl font-bold text-[#081226] tracking-tight">
+              <div className="font-editorial text-3xl sm:text-5xl font-bold text-[#0f2b5c] tracking-tight">
                 2,500+
               </div>
-              <div className="text-xs sm:text-sm font-bold text-[#081226] mt-1.5 uppercase tracking-wider">
+              <div className="text-xs sm:text-sm font-bold text-[#0f2b5c] mt-1.5 uppercase tracking-wider">
                 Happy Alumni
               </div>
               <div className="text-xs text-slate-500 mt-1 font-medium">
@@ -187,7 +166,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       ═══════════════════════════════════════════════════════════════ */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-bold text-[#081226]">
+          <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0f2b5c]">
             Why Choose Pearl Hillian?
           </h2>
           <p className="text-slate-500 text-base sm:text-lg mt-3">
@@ -201,7 +180,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0284c7] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <Users className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-base sm:text-lg text-[#081226] mb-2">
+            <h3 className="font-bold text-base sm:text-lg text-[#0f2b5c] mb-2">
               Qualified &amp; Caring Faculty
             </h3>
             <p className="text-slate-500 text-sm leading-relaxed">
@@ -214,7 +193,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0284c7] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <BookOpen className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-base sm:text-lg text-[#081226] mb-2">
+            <h3 className="font-bold text-base sm:text-lg text-[#0f2b5c] mb-2">
               Modern Facilities
             </h3>
             <p className="text-slate-500 text-sm leading-relaxed">
@@ -227,7 +206,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0284c7] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <Shield className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-base sm:text-lg text-[#081226] mb-2">
+            <h3 className="font-bold text-base sm:text-lg text-[#0f2b5c] mb-2">
               Safe &amp; Supportive Environment
             </h3>
             <p className="text-slate-500 text-sm leading-relaxed">
@@ -240,7 +219,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0284c7] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <Heart className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-base sm:text-lg text-[#081226] mb-2">
+            <h3 className="font-bold text-base sm:text-lg text-[#0f2b5c] mb-2">
               Holistic Development
             </h3>
             <p className="text-slate-500 text-sm leading-relaxed">
@@ -258,7 +237,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-bold text-[#081226]">
+              <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0f2b5c]">
                 Academic Levels
               </h2>
               <p className="text-slate-500 text-sm sm:text-base mt-2">
@@ -267,7 +246,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </div>
             <button
               onClick={() => setActiveTab('academics')}
-              className="text-xs sm:text-sm font-bold text-[#081226] hover:text-[#0284c7] inline-flex items-center gap-2 transition-colors shrink-0 px-4 py-2 bg-white rounded-full border border-slate-200 shadow-xs"
+              className="text-xs sm:text-sm font-bold text-[#0f2b5c] hover:text-[#0284c7] inline-flex items-center gap-2 transition-colors shrink-0 px-4 py-2 bg-white rounded-full border border-slate-200 shadow-xs"
             >
               <span>View Full Curriculum</span>
               <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
@@ -282,7 +261,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 onClick={() => setActiveProgramIndex(idx)}
                 className={`p-4 sm:p-5 rounded-2xl text-left transition-all border ${
                   activeProgramIndex === idx
-                    ? 'bg-[#081226] text-white border-[#081226] shadow-lg'
+                    ? 'bg-[#0f2b5c] text-white border-[#0f2b5c] shadow-lg'
                     : 'bg-white text-slate-800 border-slate-200 hover:border-slate-300 hover:bg-slate-50'
                 }`}
               >
@@ -304,20 +283,20 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-lg overflow-hidden grid grid-cols-1 lg:grid-cols-12">
             <div className="lg:col-span-7 p-6 sm:p-10 lg:p-12 flex flex-col justify-between">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-[#081226] text-[10px] sm:text-xs font-bold uppercase tracking-wider border border-slate-200 mb-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-[#0f2b5c] text-[10px] sm:text-xs font-bold uppercase tracking-wider border border-slate-200 mb-3">
                   <span>{currentProgram.level}</span>
                   <span>·</span>
                   <span>{currentProgram.ageGroup}</span>
                 </div>
 
-                <h3 className="font-editorial text-2xl sm:text-3xl lg:text-4xl font-bold text-[#081226] mb-3">
+                <h3 className="font-editorial text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0f2b5c] mb-3">
                   {currentProgram.title}
                 </h3>
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
                   {currentProgram.description}
                 </p>
 
-                <h4 className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-800 mb-3 sm:mb-4 flex items-center gap-2">
+                <h4 className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#0f2b5c] mb-3 sm:mb-4 flex items-center gap-2">
                   <CheckCircle className="w-3.5 h-3.5 text-emerald-600" />
                   <span>Key Highlights</span>
                 </h4>
@@ -334,13 +313,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <div className="pt-4 sm:pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <button
                   onClick={onOpenApplyModal}
-                  className="w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-[#081226] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-md hover:shadow-lg text-center"
+                  className="w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-[#0f2b5c] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-md hover:shadow-lg text-center"
                 >
                   Apply for Admission
                 </button>
                 <button
                   onClick={() => setActiveTab('academics')}
-                  className="w-full sm:w-auto px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors text-center"
+                  className="w-full sm:w-auto px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#0f2b5c] transition-colors text-center"
                 >
                   Read Full Curriculum →
                 </button>
@@ -364,7 +343,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       ═══════════════════════════════════════════════════════════════ */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-bold text-[#081226]">
+          <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0f2b5c]">
             Our Campus &amp; Facilities
           </h2>
           <p className="text-slate-500 text-base sm:text-lg mt-3">
@@ -381,12 +360,12 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 alt="Montessori Early Childhood Wing"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 py-1 bg-white/95 backdrop-blur-md rounded-full text-[10px] sm:text-xs font-bold text-[#081226]">
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 py-1 bg-white/95 backdrop-blur-md rounded-full text-[10px] sm:text-xs font-bold text-[#0f2b5c]">
                 Ages 2.5 – 5.5
               </div>
             </div>
             <div className="p-5 sm:p-7">
-              <h3 className="font-editorial text-xl sm:text-2xl font-bold text-[#081226]">
+              <h3 className="font-editorial text-xl sm:text-2xl font-bold text-[#0f2b5c]">
                 Montessori Wing
               </h3>
               <p className="text-slate-500 text-xs sm:text-sm leading-relaxed mt-2">
@@ -403,12 +382,12 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 alt="Students in lab coats doing experiments"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 py-1 bg-white/95 backdrop-blur-md rounded-full text-[10px] sm:text-xs font-bold text-[#081226]">
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 py-1 bg-white/95 backdrop-blur-md rounded-full text-[10px] sm:text-xs font-bold text-[#0f2b5c]">
                 Science &amp; STEM
               </div>
             </div>
             <div className="p-5 sm:p-7">
-              <h3 className="font-editorial text-xl sm:text-2xl font-bold text-[#081226]">
+              <h3 className="font-editorial text-xl sm:text-2xl font-bold text-[#0f2b5c]">
                 Science Laboratories
               </h3>
               <p className="text-slate-500 text-xs sm:text-sm leading-relaxed mt-2">
@@ -425,12 +404,12 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 alt="Children running on track with green grass"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 py-1 bg-white/95 backdrop-blur-md rounded-full text-[10px] sm:text-xs font-bold text-[#081226]">
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 py-1 bg-white/95 backdrop-blur-md rounded-full text-[10px] sm:text-xs font-bold text-[#0f2b5c]">
                 Sports &amp; Athletics
               </div>
             </div>
             <div className="p-5 sm:p-7">
-              <h3 className="font-editorial text-xl sm:text-2xl font-bold text-[#081226]">
+              <h3 className="font-editorial text-xl sm:text-2xl font-bold text-[#0f2b5c]">
                 Sports Grounds
               </h3>
               <p className="text-slate-500 text-xs sm:text-sm leading-relaxed mt-2">
@@ -443,7 +422,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <div className="text-center mt-10 sm:mt-12">
           <button
             onClick={() => setActiveTab('campus-life')}
-            className="px-6 sm:px-8 py-3 sm:py-3.5 text-xs sm:text-sm font-bold text-[#081226] bg-slate-100 hover:bg-slate-200 rounded-full transition-all inline-flex items-center gap-2"
+            className="px-6 sm:px-8 py-3 sm:py-3.5 text-xs sm:text-sm font-bold text-[#0f2b5c] bg-slate-100 hover:bg-slate-200 rounded-full transition-all inline-flex items-center gap-2"
           >
             <span>View Campus Life Gallery</span>
             <ArrowRight className="w-4 h-4 text-slate-400" />
@@ -455,7 +434,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* ═══════════════════════════════════════════════════════════════
           LEADERSHIP QUOTE — Clean dark section
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="bg-[#081226] text-white py-16 sm:py-24 px-4 sm:px-8 relative overflow-hidden rounded-2xl sm:rounded-3xl max-w-7xl mx-auto shadow-xl border border-white/10">
+      <section className="bg-[#0f2b5c] text-white py-16 sm:py-24 px-4 sm:px-8 relative overflow-hidden rounded-2xl sm:rounded-3xl max-w-7xl mx-auto shadow-xl border border-white/10">
         <div className="max-w-4xl mx-auto text-center relative z-10 space-y-6 sm:space-y-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-slate-300 text-[10px] sm:text-xs font-bold uppercase tracking-wider border border-white/15">
             <Sparkles className="w-3.5 h-3.5 text-[#f59e0b]" />
@@ -479,7 +458,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           CTA BANNER — Apply for Admission (yellow), campus visit
       ═══════════════════════════════════════════════════════════════ */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="rounded-2xl sm:rounded-3xl bg-[#081226] text-white p-6 sm:p-10 lg:p-14 shadow-xl border border-slate-800">
+        <div className="rounded-2xl sm:rounded-3xl bg-[#0f2b5c] text-white p-6 sm:p-10 lg:p-14 shadow-xl border border-blue-900/40">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
             <div className="lg:col-span-8 space-y-3 sm:space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-xs font-bold border border-white/15">
@@ -514,7 +493,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               {/* Apply for Admission → Yellow */}
               <button
                 onClick={onOpenApplyModal}
-                className="w-full py-3.5 sm:py-4 px-6 text-sm font-bold text-[#081226] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-lg hover:shadow-xl text-center"
+                className="w-full py-3.5 sm:py-4 px-6 text-sm font-bold text-[#0f2b5c] bg-[#f59e0b] hover:bg-[#d97706] rounded-full transition-all shadow-lg hover:shadow-xl text-center"
               >
                 Apply for Admission
               </button>
